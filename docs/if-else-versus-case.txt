@@ -1,0 +1,44 @@
+split a data string in ada -- search google
+
+get_line(str,L); The input string is stored in str, and the number of characters input is stored in L.
+
+type maze is array(1..40) of unbounded_string;This essentially means that there are 40 rows of unbounded strings. The first dimension is fixed, the second dynamic. 
+
+WHAT ARE THE STRING FUNCTIONS?There are a series of string functions:append / & — concatenate one string to anotherelement — return the character at a particular indexreplace_element — replace a character at a particular indexslice — return a substring (In Ada 2005, also bounded_slice and unbounded_slice)replace_slice/overwrite— replace a substringinsert — add a string in the midst of the original stringdelete— remove a string in the midst of the original stringcount — return the number of occurrences of a substringindex— locate a string in the original stringindex_non_blank— locate the first non-blank characterhead— return the first character(s) of a stringtail — return the last character(s) of a stringtrim— remove leading or trailing spaces
+
+http://pleac.sourceforge.net/pleac_ada/strings.html
+
+=============================================================
+split versus splice
+
+if else versus case
+
+parsing in Ada
+
+alias for file names
+
+If the parameter can fit in a register, it will be passed by copy (or perhaps register). If the parameter is too big for that, it will be passed by reference.
+
+
+===========================================================
+/home/wruslan/github-ump/ada-string-processing/exec/main_ada_string_processing.adx
+2021-02-26 13:10:00.77026526249 Bismillah 3 times WRY
+2021-02-26 13:10:00.77026556500 Executing: main_ada_string_processing
+
+2021-02-26 13:10:00.77026580362 Started PASS.exec_line_string_split
+
+Splitting data string 'G01 X[180.657580*#10+#6] Y[124.749177*#10+#7] Z[1.000000*#11+#8] F[#21]' at whitespace.
+Got 5 substrings:
+
+ 1 -> G01 (length 3)
+ 2 -> X[180.657580*#10+#6] (length 20)
+ 3 -> Y[124.749177*#10+#7] (length 20)
+ 4 -> Z[1.000000*#11+#8] (length 18)
+ 5 -> F[#21] (length 6)
+
+2021-02-26 13:10:00.77026659428 Ended PASS.exec_line_string_split
+
+2021-02-26 13:10:00.77026673517 Ended main: Alhamdulillah 3 times WRY
+[2021-02-26 21:10:00] process terminated successfully, elapsed time: 00.20s
+
+

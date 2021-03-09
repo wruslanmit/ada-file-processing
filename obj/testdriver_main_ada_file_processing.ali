@@ -1,0 +1,97 @@
+V "GNAT Lib v9"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U testdriver_main_ada_file_processing%b  testdriver_main_ada_file_processing.adb  d4895cd6 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pkg_ada_file_open_close%s  pkg_ada_file_open_close.adb  pkg_ada_file_open_close.ali
+W pkg_ada_file_properties%s  pkg_ada_file_properties.adb  pkg_ada_file_properties.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+Z system.concat_7%s	s-conca7.adb		s-conca7.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D pkg_ada_file_open_close.ads  20210309081234 3d9498dc pkg_ada_file_open_close%s
+D pkg_ada_file_properties.ads  20210309072206 161ad3b8 pkg_ada_file_properties%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-conca5.ads		20200312110721 875e432e system.concat_5%s
+D s-conca7.ads		20200312110721 fcc75b1f system.concat_7%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+D testdriver_main_ada_file_processing.adb  20210309100112 f7826df7 testdriver_main_ada_file_processing%b
+X 1 ada.ads
+16K9*Ada 20e8 39|9r6 10r6 11r6 24r27 25r27
+X 8 a-string.ads
+16K13*Strings 35e16 39|11r10 25r31
+X 10 a-strunb.ads
+76K21*Unbounded 491e26 39|11w18 25r39
+X 12 a-textio.ads
+49K13*Text_IO 471e16 39|9w10 10r10 24r31
+52P9*File_Type 39|34r23
+53E9*File_Mode 53e54 39|35r23
+53n23*In_File{53E9} 39|51r23
+166U14*New_Line 39|48s9 56s9 63s9 69s9
+263U14*Put_Line 39|46s9 52s9 54s9 59s9 61s9 65s9 67s9 70s9
+X 16 pkg_ada_file_open_close.ads
+8K9*pkg_ada_file_open_close 31e28 39|15w6 28r27
+16U14*exec_file_open 39|53s10
+23U14*exec_file_close 39|66s10
+X 17 pkg_ada_file_properties.ads
+8K9*pkg_ada_file_properties 42e28 39|16w6 29r27
+27U14*exec_file_properties 39|60s9
+X 39 testdriver_main_ada_file_processing.adb
+19U11*testdriver_main_ada_file_processing 19b11 72l5 72t40
+24K12 ATIO=24:31 34r18 35r18 46r4 48r4 51r18 52r4 54r4 56r4 59r4 61r4 63r4
+. 65r4 67r4 69r4 70r4
+25K12 ASU=25:39
+28K12 PAFOC=28:27 53r4 66r4
+29K12 PAFP=29:27 60r4
+34p4 inp_fhandle{12|52P9} 53m26 53r26 66m27 66r27
+35e4 inp_fmode{12|53E9} 51m4 53r39 60r31
+36a4 inp_fname{string} 52r80 53r50 54r80 59r72 60r42 61r72
+37a4 inp_fform{string} 52r99 53r61 54r99 59r91 60r53 61r91 65r70 66r40 67r70
+40a4 inp_fOwnID_00{string} 52r118 53r72 54r118 65r89 66r51 67r89
+41a4 inp_fOwnID_01{string} 59r110 60r64 61r110
+

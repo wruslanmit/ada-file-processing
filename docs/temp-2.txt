@@ -1,0 +1,11 @@
+ toClose_fhandle := inp_fhandle;
+      ATIO.Close (toClose_fhandle);         
+      
+      if    ATIO.Is_Open (toClose_fhandle) then
+            ATIO.Put_Line ("FAILED. Procedure exec_file_close (inp_fhandle)");
+            ATIO.New_Line;
+      else  -- COMMENT WHEN NOT REQUIRED LIKE DEBUGGING
+            ATIO.Put_Line ("SUCCESS. Procedure exec_file_close (inp_fhandle)");
+            ATIO.New_Line;
+      end if;
+

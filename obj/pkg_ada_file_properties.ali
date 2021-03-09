@@ -1,0 +1,131 @@
+V "GNAT Lib v9"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U pkg_ada_file_properties%b  pkg_ada_file_properties.adb  8434fb51 OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.calendar.formatting%s  a-calfor.adb	a-calfor.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pkg_ada_file_open_close%s  pkg_ada_file_open_close.adb  pkg_ada_file_open_close.ali
+Z system%s		system.ads		system.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+Z system.concat_7%s	s-conca7.adb		s-conca7.ali
+Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+Z system.img_lli%s	s-imglli.adb		s-imglli.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U pkg_ada_file_properties%s  pkg_ada_file_properties.ads  9e0760e2 EE NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-calend.ads		20200312110721 b288ede8 ada.calendar%s
+D a-calfor.ads		20200312110721 0a6f9afc ada.calendar.formatting%s
+D a-catizo.ads		20200312110721 409d7e5b ada.calendar.time_zones%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-direct.ads		20200312110721 078228da ada.directories%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D pkg_ada_file_open_close.ads  20210309081234 3d9498dc pkg_ada_file_open_close%s
+D pkg_ada_file_properties.ads  20210309072206 161ad3b8 pkg_ada_file_properties%s
+D pkg_ada_file_properties.adb  20210309101651 98c25ca1 pkg_ada_file_properties%b
+D system.ads		20200312110721 4635ec04 system%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-conca2.ads		20200312110721 02a0d7d0 system.concat_2%s
+D s-conca3.ads		20200312110721 0b705ca5 system.concat_3%s
+D s-conca5.ads		20200312110721 875e432e system.concat_5%s
+D s-conca7.ads		20200312110721 fcc75b1f system.concat_7%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-imenne.ads		20200312110721 614c06c0 system.img_enum_new%s
+D s-imglli.ads		20200312110721 114f55d1 system.img_lli%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 21|5r6 13r26 22|9r6 10r6 11r6 12r6 13r6 24r27 25r27 26r27 27r27
+X 2 a-calend.ads
+36K13*Calendar 410e17 22|11w10 12r10 13r10 26r31 27r31
+42I9*Time<223I9>
+223I9 Time_Rep<long_long_integer>
+X 3 a-calfor.ads
+24K22*Formatting 215e28 22|12w19 13r19 27r40
+176V13*Image{string} 22|65s28
+X 7 a-direct.ads
+76K13*Directories 502e20 22|10w10 25r31
+239V13*Full_Name{string} 22|62s55
+260V13*Extension{string} 22|63s55
+307I9*File_Size<long_integer> 22|61r43
+321V13*Size{307I9} 22|61s63
+332V13*Modification_Time{2|42I9} 22|65s38
+X 16 a-textio.ads
+49K13*Text_IO 471e16 21|5w10 13r30 22|9w10 24r31
+52P9*File_Type 22|35r27
+53E9*File_Mode 53e54 21|27r58 22|40r57 57r45
+242U14*Put 22|64s12
+263U14*Put_Line 22|53s12 55s12 57s12 58s12 59s12 60s12 61s12 62s12 63s12
+. 65s12 71s12 73s12
+X 20 pkg_ada_file_open_close.ads
+8K9*pkg_ada_file_open_close 31e28 22|16w6 29r26
+16U14*exec_file_open 22|54s13
+23U14*exec_file_close 22|72s13
+X 21 pkg_ada_file_properties.ads
+8K9*pkg_ada_file_properties 42l5 42e28 22|19b14 80l5 80t28
+13K12*SATIO=13:30 27r52
+27U14*exec_file_properties 27>36 28>36 29>36 30>36 22|40b14 75l8 75t28
+27e36 inp_fmode{16|53E9} 22|40b36 54r45 57r62
+28a36 inp_fname{string} 22|41b36 53r86 54r56 55r86 58r40 61r69 62r66 63r66
+. 65r57
+29a36 inp_fform{string} 22|42b36 53r105 54r67 55r105 59r40 71r76 72r46 73r76
+30a36 inp_fOwnID{string} 22|43b36 53r124 54r78 55r124 60r40 71r95 72r57 73r95
+X 22 pkg_ada_file_properties.adb
+24K12 ATIO=24:31 35r22 40r52 53r7 55r7 57r7 57r40 58r7 59r7 60r7 61r7 62r7
+. 63r7 64r7 65r7 71r7 73r7
+25K12 AD=25:31 61r40 61r60 62r52 63r52 65r35
+26K12 ACal=26:31
+27K12 ACalF=27:40 65r22
+29K12 PAFOC=29:26 54r7 72r7
+35p4 inp_fhandle_01{16|52P9} 54m29 54r29 72m30 72r30
+

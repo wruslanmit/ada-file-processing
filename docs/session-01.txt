@@ -1,0 +1,121 @@
+gprbuild -d -P/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr -s -k
+Compile
+   [Ada]          testdriver_main_ada_file_processing.adb
+   [Ada]          pkg_ada_file_open_close.adb
+   [Ada]          pkg_ada_file_properties.adb
+Bind
+   [gprbind]      testdriver_main_ada_file_processing.bexch
+   [Ada]          testdriver_main_ada_file_processing.ali
+Link
+   [link]         testdriver_main_ada_file_processing.adb
+[2021-03-09 18:17:08] process terminated successfully, elapsed time: 01.16s
+
+==========================================================
+/home/wruslan/github-mit/ada-file-processing/exec/testdriver_main_ada_file_processing.adx
+STARTED: main Bismillah 3 times WRY
+
+Running... PAFOC.exec_file_open (inp_fhandle, inp_fmode, files/test_file.txt, shared=yes, ID: 00 main)
+Completed: PAFOC.exec_file_open (inp_fhandle, inp_fmode, files/test_file.txt, shared=yes, ID: 00 main)
+
+Running... PAFP.exec_file_properties (inp_fmode, files/test_file.txt, shared=yes, ID: 01 fproperties)
+Running... PAFOC.exec_file_open (inp_fhandle_01, inp_fmode, files/test_file.txt, shared=yes, ID: 01 fproperties)
+Completed: PAFOC.exec_file_open (inp_fhandle_01, inp_fmode, files/test_file.txt, shared=yes, ID: 01 fproperties)
+inp_fmode  = IN_FILE
+inp_fname  = files/test_file.txt
+inp_fform  = shared=yes
+inp_fOwnID = ID: 01 fproperties
+File Size  =  1348 bytes
+File Full_Name         = /home/wruslan/github-mit/ada-file-processing/files/test_file.txt
+File Extension         = txt
+File Modification_Time = 2021-03-09 02:56:39
+Running... PAFOC.exec_file_close (inp_fhandle_01, shared=yes, ID: 01 fproperties)
+Completed: PAFOC.exec_file_close (inp_fhandle_01, shared=yes, ID: 01 fproperties)
+Completed: PAFP.exec_file_properties (inp_fmode, files/test_file.txt, shared=yes, ID: 01 fproperties)
+
+Running... PAFOC.exec_file_close (inp_fhandle, shared=yes, ID: 00 main)
+Completed: PAFOC.exec_file_close (inp_fhandle, shared=yes, ID: 00 main)
+
+ENDED: main Alhamdulillah 3 times WRY
+[2021-03-09 18:17:43] process terminated successfully, elapsed time: 00.20s
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ ls -al
+total 44
+drwxrwxr-x 9 wruslan wruslan 4096 Mar  9 09:47 .
+drwxrwxr-x 8 wruslan wruslan 4096 Mar  9 13:38 ..
+drwxrwxr-x 2 wruslan wruslan 4096 Mar  9 18:19 docs
+drwxrwxr-x 2 wruslan wruslan 4096 Mar  9 18:17 exec
+drwxrwxr-x 2 wruslan wruslan 4096 Mar  6 14:23 figures
+drwxrwxr-x 2 wruslan wruslan 4096 Mar  9 10:57 files
+drwxrwxr-x 8 wruslan wruslan 4096 Mar  9 18:16 .git
+drwxrwxr-x 2 wruslan wruslan 4096 Mar  9 18:17 obj
+-rw-rw-r-- 1 wruslan wruslan 1892 Mar  9 09:47 pkg_ada_file_processing.gpr
+-rw-rw-r-- 1 wruslan wruslan   62 Mar  6 14:21 README.md
+drwxrwxr-x 4 wruslan wruslan 4096 Mar  9 18:01 src
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ tree ./
+./
+├── docs
+│   ├── design-packages.txt
+│   ├── if-else-versus-case.txt
+│   ├── reference-01.txt
+│   ├── session-01.txt
+│   ├── temp-1.txt
+│   └── temp-2.txt
+├── exec
+│   └── testdriver_main_ada_file_processing.adx
+├── figures
+├── files
+│   └── test_file.txt
+├── obj
+│   ├── b__testdriver_main_ada_file_processing.adb
+│   ├── b__testdriver_main_ada_file_processing.ads
+│   ├── b__testdriver_main_ada_file_processing.ali
+│   ├── b__testdriver_main_ada_file_processing.o
+│   ├── gpsauto.cgpr
+│   ├── pkg_ada_file_close.adb.stderr
+│   ├── pkg_ada_file_close.adb.stdout
+│   ├── pkg_ada_file_close.ali
+│   ├── pkg_ada_file_close.cswi
+│   ├── pkg_ada_file_close.o
+│   ├── pkg_ada_file_open.adb.stderr
+│   ├── pkg_ada_file_open.adb.stdout
+│   ├── pkg_ada_file_open.ali
+│   ├── pkg_ada_file_open_close.adb.stderr
+│   ├── pkg_ada_file_open_close.adb.stdout
+│   ├── pkg_ada_file_open_close.ali
+│   ├── pkg_ada_file_open_close.cswi
+│   ├── pkg_ada_file_open_close.o
+│   ├── pkg_ada_file_open.cswi
+│   ├── pkg_ada_file_open.o
+│   ├── pkg_ada_file_processing-loc.xml
+│   ├── pkg_ada_file_properties.adb.stderr
+│   ├── pkg_ada_file_properties.adb.stdout
+│   ├── pkg_ada_file_properties.ali
+│   ├── pkg_ada_file_properties.cswi
+│   ├── pkg_ada_file_properties.o
+│   ├── testdriver_main_ada_file_processing.adb.stderr
+│   ├── testdriver_main_ada_file_processing.adb.stdout
+│   ├── testdriver_main_ada_file_processing.ali
+│   ├── testdriver_main_ada_file_processing.bexch
+│   ├── testdriver_main_ada_file_processing.cswi
+│   └── testdriver_main_ada_file_processing.o
+├── pkg_ada_file_processing.gpr
+├── README.md
+└── src
+    ├── pkg-ada-file-open-close
+    │   ├── pkg_ada_file_open_close.adb
+    │   └── pkg_ada_file_open_close.ads
+    ├── pkg-ada-file-properties
+    │   ├── pkg_ada_file_properties.adb
+    │   └── pkg_ada_file_properties.ads
+    └── testdriver_main_ada_file_processing.adb
+
+8 directories, 47 files
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+===========================================================
+ALHAMDULILLAH 3 TIMES.
+===========================================================
+

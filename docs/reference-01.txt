@@ -1,0 +1,56 @@
+Two categories of input–output are recognized and we can refer to these as
+binary and text respectively. 
+
+As an example consider
+   I: Integer := 75;
+
+BINARY FILE : Write()
+===========================   
+We can output the binary image of I onto file F by
+   Write(F, I);
+and the pattern transmitted might be (on a 16-bit machine)
+   0000 0000 0100 1011
+
+which is the representation of the characters ‘7’ and ‘5’. 
+In this case the file can be thought of as an array of the type Character.
+
+In fact the file can be thought of as essentially an array of the type Integer . 
+
+TEXT FILE : Put ()
+==========================
+On the other hand we can output the text form of I by
+	Put(F, I);
+and the pattern transmitted might then be
+    0011 0111 0011 0101
+
+BINARY INPUT-OUTPUT
+=======================================
+Input-output of the binary category is subdivided into: 
+(1) sequential provided by Ada.Sequential_IO 
+(2) direct access provided by Ada.Direct_IO  
+
+TEXT INPUT-OUTPUT
+=======================================
+https://www.adaic.org/resources/add_content/standards/05rm/html/RM-A-10-1.html
+
+Text input–output (which is always sequential) is provided by the nongeneric 
+package Ada.Text_IO
+
+ARBITRARY TYPES INPUT-OUTPUT
+=======================================
+A general stream mechanism is defined which allows files of arbitrary types; 
+these are implemented using the facilities of the package Ada.Streams.
+
+ADA IO-EXCEPTIONS
+======================================
+There is also a package Ada.IO_Exceptions which contains the declarations of
+the exceptions used by the other packages.
+
+
+
+
+
+
+
+
+

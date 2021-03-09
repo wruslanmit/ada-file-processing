@@ -1,0 +1,92 @@
+
+display in text output in execution, default False 
+specify if True (Boolean)
+Use switch for code debugging  display=True 
+
+Track processing by line number: 
+
+Examples:
+
+lineno 125 lineBlank : line removed
+lineno 160 lineContent "%" : line removed
+lineno 167 lineCondition "length less than 5" line removed 
+
+===================================================
+
+pkg-open-file  POF
+    -success (display_False)
+    -failed  (display_True)  -- default 
+    fileName_x1 => original file 
+
+If the form parameter `shared=no' appears in the form string, the file can be opened or created with its own separate stream identifier, regardless of whether other files sharing the same external file are opened. The exact effect depends on how the C stream routines handle multiple accesses to the same external files using separate streams.
+
+If the form parameter `shared=yes' appears in the form string for each of two or more files opened using the same full name, the same stream is shared between these files, and the semantics are as described in Ada Reference Manual, Section A.14. 
+
+
+
+
+pkg-file-properties PAFP
+   function  Mode   (File : in File_Type) return File_Mode;
+   function  Name   (File : in File_Type) return String;
+   function  Form   (File : in File_Type) return String;
+function Size(File : in File_Type) return Count; Operates on a file of any mode. Returns the current size of the external file that is associated with the given file.
+
+	get_fileName
+	get_fileDirectory
+	fileFullPath
+	fileSize
+	filePermissions
+	fileDate
+
+pkg-about-file-lines      PAFL
+    max_lineLength
+    min_lineLength
+    count_lineBlank
+    count_lineNonBlank
+    count_lineTotal
+     
+pkg-file-remove-lines  (results in new file) PFRL
+     
+     copy-file (copyFrom_FName, copyTo_FName)
+     -- Delete only on copyTo_FName (InOut_FMode)  -- in-situ delete.
+     delete-line-on-zero-lineLength
+     delete-line-on-substring-condition    
+
+pkg-file-copy-with-line-number  (PFCWLN)     
+    inp_   - file without line numbers
+    out_
+    outL_  - file with line numbers
+    inpL_ 
+    
+    
+pkg-file-trim-line  PFTL
+where leading and trailing whitespace is removed from a string.
+    retain-original-file (not :InOut_FMode) 
+    create-file with-trimmed-lines ( :Append_FMode)
+    Split line into tokens based on "single white space" and "horizontal tab" or "X", "#", or "<" or "[" etc
+    splice string based on [  ]
+    -- trimmed in-situ ???
+
+pkg-XX-close-textfile
+    -success
+    -failed
+
+============================================
+
+==> Output file to be processed in string processing package 
+
+Input is a trimmed and non-blank text file:
+
+pkg-extract-tokens-perLine
+split a data string in ada -- search google
+
+UNSEEN
+Split line into tokens based on "single white space" and "horizontal tab"
+
+Transform all gcodes into NGC, instead of many programs use only one program for NGC
+example G0 becomes G00
+
+
+
+    
+===========================================================    

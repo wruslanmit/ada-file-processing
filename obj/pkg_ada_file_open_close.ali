@@ -1,0 +1,73 @@
+V "GNAT Lib v9"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U pkg_ada_file_open_close%b  pkg_ada_file_open_close.adb  5c346a8c OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+
+U pkg_ada_file_open_close%s  pkg_ada_file_open_close.ads  b5892b86 EE NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D pkg_ada_file_open_close.ads  20210309081234 3d9498dc pkg_ada_file_open_close%s
+D pkg_ada_file_open_close.adb  20210309092952 e9bd410a pkg_ada_file_open_close%b
+D system.ads		20200312110721 4635ec04 system%s
+D s-conca5.ads		20200312110721 875e432e system.concat_5%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 10|5r6 13r26 11|7r6 16r25
+X 6 a-textio.ads
+49K13*Text_IO 471e16 10|5w10 13r30 11|7w10 16r29
+52P9*File_Type 10|16r58 23r58 11|23r56 55r57
+53E9*File_Mode 53e54 10|17r54 11|24r52
+92U14*Open 11|36s12
+98U14*Close 11|66s12
+107V13*Is_Open{boolean} 11|38s20 68s16
+166U14*New_Line 11|70s16
+263U14*Put_Line 11|39s15 69s16
+X 10 pkg_ada_file_open_close.ads
+8K9*pkg_ada_file_open_close 31l5 31e28 11|12b14 83l5 83t28
+13K12*SATIO=13:30 16r52 17r48 23r52
+16U14*exec_file_open 16=30 17>30 18>30 19>30 20>30 11|23b14 52l8 52t22
+16p30 inp_fhandle{6|52P9} 11|23b30 36m18 38r29
+17e30 inp_fmode{6|53E9} 11|24b30 36r31
+18a30 inp_fname{string} 11|25b30 36r42
+19a30 inp_fform{string} 11|26b30 36r53
+20a30 inp_fOwnID{string} 11|27b30
+23U14*exec_file_close 23=31 24>31 25>31 11|55b14 77l8 77t23
+23p31 inp_fhandle{6|52P9} 11|55b31 66m19 68r25
+24a31 inp_fform{string} 11|56b31 69r79
+25a31 inp_fOwnID{string} 11|57b31 69r98
+X 11 pkg_ada_file_open_close.adb
+16K12 ATIO=16:29 23r51 24r47 36r7 38r15 39r10 55r52 66r7 68r11 69r11 70r11
+

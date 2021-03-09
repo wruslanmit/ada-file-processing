@@ -1,0 +1,45 @@
+  
+    
+   inp_UBlineStr : ASU.Unbounded_String;
+   len_UBlineStr : Natural := 999;
+   inp_lineCount : Integer := 999; 
+   inp_lineStr   : String  := ASU.To_String(inp_UBlineStr);
+   
+   
+  
+      ATIO.Put_Line("ToOpen inp_fname = " & inp_fname);
+      ATIO.Open (inp_fhandle, inp_fmode, inp_fname); 
+      ATIO.Put_Line("Opened inp_fname = " & inp_fname & " successfully.");
+      
+      ATIO.New_Line;
+      inp_lineCount := 0;
+      ATIO.Put_Line("============ Start of " & inp_fname & " ============");
+      
+      -- Traverse file line by line 
+      while not ATIO.End_Of_File (inp_fhandle) loop
+         
+         -- From file read (get) single line
+         inp_UBlineStr := ASU.To_Unbounded_String(ATIO.Get_Line (inp_fhandle));
+         len_UBlineStr := ASU.Length (inp_UBlineStr);
+         inp_lineCount := inp_lineCount + 1;
+         
+         -- Display read line to terminal
+         ATIO.Put (ATIO.Standard_Output, "LINE_NO " & Integer'Image(inp_lineCount) & " : "); 
+         ATIO.Put_Line (ATIO.Standard_Output, ASU.To_String (inp_UBlineStr)); 
+         
+      end loop;   
+      ATIO.Put_Line("============ End of " & inp_fname & " ============");
+      ATIO.Close(inp_fhandle);
+      
+   end exec_read_display_file;
+   
+   -- =====================================================
+   procedure about_pkg_ada_read_display_file
+   -- =====================================================
+   is 
+   
+   begin 
+      ATIO.Put_Line("About_pkg_ada_read_display_file (PARDF)");
+
+   end about_pkg_ada_read_display_file;
+   -- =======================================================   
