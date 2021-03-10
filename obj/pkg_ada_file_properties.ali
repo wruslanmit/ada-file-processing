@@ -16,7 +16,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U pkg_ada_file_properties%b  pkg_ada_file_properties.adb  8434fb51 OO PK IL
+U pkg_ada_file_properties%b  pkg_ada_file_properties.adb  784c88cb OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.calendar%s	a-calend.adb		a-calend.ali
 W ada.calendar.formatting%s  a-calfor.adb	a-calfor.ali
@@ -57,8 +57,8 @@ D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
 D pkg_ada_file_open_close.ads  20210309081234 3d9498dc pkg_ada_file_open_close%s
-D pkg_ada_file_properties.ads  20210309072206 161ad3b8 pkg_ada_file_properties%s
-D pkg_ada_file_properties.adb  20210309101651 98c25ca1 pkg_ada_file_properties%b
+D pkg_ada_file_properties.ads  20210309134813 161ad3b8 pkg_ada_file_properties%s
+D pkg_ada_file_properties.adb  20210309132706 64ba2f3b pkg_ada_file_properties%b
 D system.ads		20200312110721 4635ec04 system%s
 D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
 D s-conca2.ads		20200312110721 02a0d7d0 system.concat_2%s
@@ -92,40 +92,40 @@ X 2 a-calend.ads
 223I9 Time_Rep<long_long_integer>
 X 3 a-calfor.ads
 24K22*Formatting 215e28 22|12w19 13r19 27r40
-176V13*Image{string} 22|65s28
+176V13*Image{string} 22|66s28
 X 7 a-direct.ads
 76K13*Directories 502e20 22|10w10 25r31
-239V13*Full_Name{string} 22|62s55
-260V13*Extension{string} 22|63s55
-307I9*File_Size<long_integer> 22|61r43
-321V13*Size{307I9} 22|61s63
-332V13*Modification_Time{2|42I9} 22|65s38
+239V13*Full_Name{string} 22|63s58
+260V13*Extension{string} 22|64s58
+307I9*File_Size<long_integer> 22|62r46
+321V13*Size{307I9} 22|62s66
+332V13*Modification_Time{2|42I9} 22|66s38
 X 16 a-textio.ads
 49K13*Text_IO 471e16 21|5w10 13r30 22|9w10 24r31
-52P9*File_Type 22|35r27
-53E9*File_Mode 53e54 21|27r58 22|40r57 57r45
-242U14*Put 22|64s12
+52P9*File_Type 22|35r29
+53E9*File_Mode 53e54 21|21r58 22|40r57 58r48
+242U14*Put 22|65s12
 263U14*Put_Line 22|53s12 55s12 57s12 58s12 59s12 60s12 61s12 62s12 63s12
-. 65s12 71s12 73s12
+. 64s12 66s12 72s12 74s12
 X 20 pkg_ada_file_open_close.ads
 8K9*pkg_ada_file_open_close 31e28 22|16w6 29r26
 16U14*exec_file_open 22|54s13
-23U14*exec_file_close 22|72s13
+23U14*exec_file_close 22|73s13
 X 21 pkg_ada_file_properties.ads
-8K9*pkg_ada_file_properties 42l5 42e28 22|19b14 80l5 80t28
-13K12*SATIO=13:30 27r52
-27U14*exec_file_properties 27>36 28>36 29>36 30>36 22|40b14 75l8 75t28
-27e36 inp_fmode{16|53E9} 22|40b36 54r45 57r62
-28a36 inp_fname{string} 22|41b36 53r86 54r56 55r86 58r40 61r69 62r66 63r66
-. 65r57
-29a36 inp_fform{string} 22|42b36 53r105 54r67 55r105 59r40 71r76 72r46 73r76
-30a36 inp_fOwnID{string} 22|43b36 53r124 54r78 55r124 60r40 71r95 72r57 73r95
+8K9*pkg_ada_file_properties 36l5 36e28 22|19b14 81l5 81t28
+13K12*SATIO=13:30 21r52
+21U14*exec_file_properties 21>36 22>36 23>36 24>36 22|40b14 76l8 76t28
+21e36 inp_fmode{16|53E9} 22|40b36 54r47 58r65
+22a36 inp_fname{string} 22|41b36 53r88 54r58 55r88 59r43 62r72 63r69 64r69
+. 66r57
+23a36 inp_fform{string} 22|42b36 53r107 54r69 55r107 60r43 72r78 73r48 74r78
+24a36 inp_fOwnID{string} 22|43b36 53r126 54r80 55r126 61r43 72r97 73r59 74r97
 X 22 pkg_ada_file_properties.adb
-24K12 ATIO=24:31 35r22 40r52 53r7 55r7 57r7 57r40 58r7 59r7 60r7 61r7 62r7
-. 63r7 64r7 65r7 71r7 73r7
-25K12 AD=25:31 61r40 61r60 62r52 63r52 65r35
+24K12 ATIO=24:31 35r24 40r52 53r7 55r7 57r7 58r7 58r43 59r7 60r7 61r7 62r7
+. 63r7 64r7 65r7 66r7 72r7 74r7
+25K12 AD=25:31 62r43 62r63 63r55 64r55 66r35
 26K12 ACal=26:31
-27K12 ACalF=27:40 65r22
-29K12 PAFOC=29:26 54r7 72r7
-35p4 inp_fhandle_01{16|52P9} 54m29 54r29 72m30 72r30
+27K12 ACalF=27:40 66r22
+29K12 PAFOC=29:26 54r7 73r7
+35p4 inp_fhandle_PAFP{16|52P9} 54m29 54r29 73m30 73r30
 

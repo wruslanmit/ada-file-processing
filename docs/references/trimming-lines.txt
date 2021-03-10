@@ -1,0 +1,49 @@
+
+
+with Ada.Strings.Fixed;
+use Ada.Strings.Fixed;
+
+Blank := Index_Non_Blank (Str) = 0;
+
+Set boolean blank to true if string s is empty, or null, or contains only whitespace ; false otherwise.
+
+======================================
+procedure Empty_String is
+ 
+   function Is_Empty(S: String) return Boolean is
+   begin
+      return S = ""; -- test that S is empty
+   end Is_Empty;
+ 
+   Empty: String := ""; -- Assign empty string
+   XXXXX: String := "Not Empty";
+ 
+begin
+   if (not Is_Empty(Empty)) or Is_Empty(XXXXX) then
+      raise Program_Error with "something went wrong very very badly!!!";
+   end if;
+end Empty_String;
+
+NULL STRING
+=======================================
+file:///home/wruslan/github-mit/00-Ada-2012-HTML-Reference-Manual-start-with-RM00-TOC-html/RM-2-6.html
+
+A null string literal is a string_literal with no string_elements between the quotation marks.
+
+Examples of string literals: 
+
+"Message of the day:"
+
+""                    --  a null string literal
+" "   "A"   """"      --  three string literals of length 1
+
+"Characters such as $, %, and } are allowed in string literals"
+"Archimedes said ""Εύρηκα"""
+"Volume of cylinder (πr²h) = "
+
+=========================================
+
+https://www.adaic.org/resources/add_content/standards/05rm/html/RM-A-4-5.html
+
+
+

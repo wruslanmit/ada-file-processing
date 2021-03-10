@@ -31,13 +31,14 @@ package body ada_main is
    E113 : Short_Integer; pragma Import (Ada, E113, "system__finalization_masters_E");
    E111 : Short_Integer; pragma Import (Ada, E111, "system__storage_pools__subpools_E");
    E097 : Short_Integer; pragma Import (Ada, E097, "ada__strings__unbounded_E");
-   E149 : Short_Integer; pragma Import (Ada, E149, "ada__calendar_E");
-   E155 : Short_Integer; pragma Import (Ada, E155, "ada__calendar__time_zones_E");
+   E157 : Short_Integer; pragma Import (Ada, E157, "ada__calendar_E");
+   E163 : Short_Integer; pragma Import (Ada, E163, "ada__calendar__time_zones_E");
    E130 : Short_Integer; pragma Import (Ada, E130, "ada__text_io_E");
-   E177 : Short_Integer; pragma Import (Ada, E177, "system__regexp_E");
-   E169 : Short_Integer; pragma Import (Ada, E169, "ada__directories_E");
-   E137 : Short_Integer; pragma Import (Ada, E137, "pkg_ada_file_open_close_E");
-   E147 : Short_Integer; pragma Import (Ada, E147, "pkg_ada_file_properties_E");
+   E183 : Short_Integer; pragma Import (Ada, E183, "system__regexp_E");
+   E177 : Short_Integer; pragma Import (Ada, E177, "ada__directories_E");
+   E141 : Short_Integer; pragma Import (Ada, E141, "pkg_ada_file_open_close_E");
+   E137 : Short_Integer; pragma Import (Ada, E137, "pkg_ada_file_line_properties_E");
+   E155 : Short_Integer; pragma Import (Ada, E155, "pkg_ada_file_properties_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -48,14 +49,14 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E169 := E169 - 1;
+      E177 := E177 - 1;
       declare
          procedure F1;
          pragma Import (Ada, F1, "ada__directories__finalize_spec");
       begin
          F1;
       end;
-      E177 := E177 - 1;
+      E183 := E183 - 1;
       declare
          procedure F2;
          pragma Import (Ada, F2, "system__regexp__finalize_spec");
@@ -252,21 +253,23 @@ package body ada_main is
       E097 := E097 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
-      E149 := E149 + 1;
+      E157 := E157 + 1;
       Ada.Calendar.Time_Zones'Elab_Spec;
-      E155 := E155 + 1;
+      E163 := E163 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E130 := E130 + 1;
       System.Regexp'Elab_Spec;
-      E177 := E177 + 1;
+      E183 := E183 + 1;
       Ada.Directories'Elab_Spec;
       Ada.Directories'Elab_Body;
-      E169 := E169 + 1;
+      E177 := E177 + 1;
       pkg_ada_file_open_close'elab_body;
+      E141 := E141 + 1;
+      pkg_ada_file_line_properties'elab_body;
       E137 := E137 + 1;
       pkg_ada_file_properties'elab_body;
-      E147 := E147 + 1;
+      E155 := E155 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -303,6 +306,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_open_close.o
+   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_line_properties.o
    --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_properties.o
    --   /home/wruslan/github-mit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
    --   -L/home/wruslan/github-mit/ada-file-processing/obj/

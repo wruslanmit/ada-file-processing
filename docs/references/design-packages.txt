@@ -45,7 +45,7 @@ pkg-about-file-lines      PAFL
     count_lineNonBlank
     count_lineTotal
      
-pkg-file-remove-lines  (results in new file) PFRL
+pkg-file-remove-lines  (results in new file) PAFRL
      
      copy-file (copyFrom_FName, copyTo_FName)
      -- Delete only on copyTo_FName (InOut_FMode)  -- in-situ delete.

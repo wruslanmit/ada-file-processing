@@ -13,15 +13,9 @@ is
    package SATIO renames Ada.Text_IO; 
    
    -- LIST OF PROCEDURES
-   -- procedure exec_file_properties (inp_fhandle : SATIO.File_Type);
-   
-   -- LIST OF FUNCTIONS
-    -- get_fileName
-	-- get_fileDirectory
-	-- fileFullPath
-	-- fileSize
-	-- filePermissions
-	-- fileDate  
+   -- File_Kind
+   -- File_Permissions
+	  
    
    -- NOTE: No need for inp_fhandle
    procedure exec_file_properties (inp_fmode  : in SATIO.File_Mode; 

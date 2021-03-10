@@ -32,7 +32,7 @@ is
    -- TEMPLATE FOR GENERIC FILE VARIABLES
    -- =======================================================
    -- new filehandle possible with sharing
-   inp_fhandle_01  : ATIO.File_Type;   
+   inp_fhandle_PAFP  : ATIO.File_Type;   
    
        
    -- NOTE: inp_fhandel_01 will be obtained internally in this package
@@ -49,28 +49,29 @@ is
    begin 
          
       -- NOTE CALL ANOTHER PACKAGE
-      -- new filehandle possible with sharing
-      ATIO.Put_Line("Running... PAFOC.exec_file_open (inp_fhandle_01, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
-      PAFOC.exec_file_open (inp_fhandle_01, inp_fmode, inp_fname, inp_fform, inp_fOwnID);
-      ATIO.Put_Line("Completed: PAFOC.exec_file_open (inp_fhandle_01, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
+      -- new filehandle possible with sharing because fform sharing=yes
+      ATIO.Put_Line("Running... PAFOC.exec_file_open (inp_fhandle_PAFP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
+      PAFOC.exec_file_open (inp_fhandle_PAFP, inp_fmode, inp_fname, inp_fform, inp_fOwnID);
+      ATIO.Put_Line("Completed: PAFOC.exec_file_open (inp_fhandle_PAFP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
       
-      ATIO.Put_Line ("inp_fmode  = " & ATIO.File_Mode'Image (inp_fmode));
-      ATIO.Put_Line ("inp_fname  = " & inp_fname);
-      ATIO.Put_Line ("inp_fform  = " & inp_fform);
-      ATIO.Put_Line ("inp_fOwnID = " & inp_fOwnID);
-      ATIO.Put_Line ("File Size  = " & AD.File_Size'Image (AD.Size (inp_fname)) & " bytes");
-      ATIO.Put_Line ("File Full_Name         = " & AD.Full_Name (inp_fname));
-      ATIO.Put_Line ("File Extension         = " & AD.Extension (inp_fname));
-      ATIO.Put ("File Modification_Time = "); 
+      ATIO.Put_Line ("   REPORT ON FILE PROPERTIES");
+      ATIO.Put_Line ("   inp_fmode  = " & ATIO.File_Mode'Image (inp_fmode));
+      ATIO.Put_Line ("   inp_fname  = " & inp_fname);
+      ATIO.Put_Line ("   inp_fform  = " & inp_fform);
+      ATIO.Put_Line ("   inp_fOwnID = " & inp_fOwnID);
+      ATIO.Put_Line ("   File Size  = " & AD.File_Size'Image (AD.Size (inp_fname)) & " bytes");
+      ATIO.Put_Line ("   File Full_Name         = " & AD.Full_Name (inp_fname));
+      ATIO.Put_Line ("   File Extension         = " & AD.Extension (inp_fname));
+      ATIO.Put ("   File Modification_Time = "); 
       ATIO.Put_Line (ACALF.Image (AD.Modification_Time (inp_fname)));
       
    -- ATIO.Put ("File_Kind  = ");
    -- ATIO.Put_Line (AD.File_Kind'Image (AD.File_Kind (inp_fname)));
             
       -- NOTE CALL ANOTHER PACKAGE
-      ATIO.Put_Line("Running... PAFOC.exec_file_close (inp_fhandle_01, " & inp_fform & ", " & inp_fOwnID & ")");
-      PAFOC.exec_file_close (inp_fhandle_01, inp_fform, inp_fOwnID);
-      ATIO.Put_Line("Completed: PAFOC.exec_file_close (inp_fhandle_01, " & inp_fform & ", " & inp_fOwnID & ")");
+      ATIO.Put_Line("Running... PAFOC.exec_file_close (inp_fhandle_PAFP, " & inp_fform & ", " & inp_fOwnID & ")");
+      PAFOC.exec_file_close (inp_fhandle_PAFP, inp_fform, inp_fOwnID);
+      ATIO.Put_Line("Completed: PAFOC.exec_file_close (inp_fhandle_PAFP, " & inp_fform & ", " & inp_fOwnID & ")");
       
    end exec_file_properties;
 -- =======================================================   

@@ -1,0 +1,71 @@
+-- Demonstrates the use of Unbounded Strings
+
+-- to_unbounded_string - creates an Unbounded_String from a String
+-- & is defined on Unbounded_Strings
+
+-- to_string - creates a String from an Unbounded_String
+
+-- length - returns the length of an Unbounded_String
+-- slice - returns characters found in an Unbounded_String
+-- insert - inserts characters into an Unbounded_String 
+--        - function or procedure version available
+-- Many other routines are available
+
+with Ada.Text_IO; 
+use  Ada.Text_IO;
+with Ada.Integer_Text_IO; 
+use  Ada.Integer_Text_IO;
+with Ada.Strings.Unbounded; 
+use  Ada.Strings.Unbounded;
+
+procedure unbounded is
+    f: String := "abcde";
+
+    s: Unbounded_String;
+
+begin
+    -- Create an Unbounded_String from a String
+    s := to_unbounded_string(f);
+
+    -- Change the length of s
+    -- Unbounded_String & String yields an Unbounded_String
+    s := s & "fgh";
+
+    -- length of s is 8
+    put(length(s), 0);
+    new_line;
+
+    -- Procedure put_line takes a String, so we must convert
+    put_line(to_string(s));
+
+    -- Prints String "bcde", the slice in positions 2..5
+    put_line(slice(s, 2, 5));
+
+    -- Insert some characters into s: outputs aXXbcdefgh
+    put_line(to_string(insert(s, 2, "XX")));
+
+    --- Unbounded_String s has not changed; it's still abcdefgh
+    put_line(to_string(s));
+
+    -- insert is a function and a procedure; changes s to aYYYbcdefgh
+    insert(s, 2, "YYY");
+
+    -- Outputs aYYYbcdefgh - s was changed by line above
+    put_line(to_string(s));
+
+    -- Three copies of "Hi"
+    s := 3 * "Hi";
+    put_line(to_string(s));
+
+end unbounded;
+8
+abcdefgh
+bcde
+aXXbcdefgh
+abcdefgh
+aYYYbcdefgh
+HiHiHi
+
+=======================================================
+
+
