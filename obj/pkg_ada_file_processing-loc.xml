@@ -2,13 +2,16 @@
 <Locations >
   <Project>
     <vfs_file />
-    <file_marker column=" 4" line=" 73" >
+    <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project>/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr</vfs_project>
       <vfs_file>/home/wruslan/github-mit/ada-file-processing/src/testdriver_main_ada_file_processing.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 42" >
-      <vfs_project>/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr</vfs_project>
-      <vfs_file>/home/wruslan/github-mit/ada-file-processing/src/pkg-ada-file-line-properties/pkg_ada_file_line_properties.adb</vfs_file>
+  </Project>
+  <Project >
+    <vfs_file >/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr</vfs_file>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr</vfs_project>
+      <vfs_file >/home/wruslan/github-mit/ada-file-processing/src/testdriver_main_ada_file_processing.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>

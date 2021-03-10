@@ -72,9 +72,9 @@ is
      
       -- ==================================================
       -- OPEN: Attempt to open file using PAFOC package
-      ATIO.Put_Line("Running...   PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
+      -- ATIO.Put_Line("Running (2.1) ... PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
       PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, inp_fname, inp_fform, inp_fOwnID); 
-      ATIO.Put_Line("Completed... PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
+      -- ATIO.Put_Line("Completed (2.1) ... PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, " & inp_fname & ", " & inp_fform & ", " & inp_fOwnID & ")");
       
       -- DEFINE PACKAGE-WIDE VARIABLES
       -- ==================================================
@@ -191,8 +191,8 @@ is
       -- ==================================================
       end loop;  
       -- ==================================================
-      
-      ATIO.Put_Line ("   REPORT ON FILE LINE PROPERTIES");
+      ATIO.New_Line;
+      ATIO.Put_Line ("REPORT ON FILE LINE PROPERTIES");
       ATIO.Put_Line ("      max_UBSLineLength           = " & Integer'Image(max_UBSLineLength));
       ATIO.Put_Line ("      min_UBSlineLength           = " & Integer'Image(min_UBSlineLength));
       
@@ -203,12 +203,13 @@ is
       ATIO.Put_Line ("   cnt_lineBlank_NO_WhiteSpace    = " & Integer'Image(cnt_lineBlank_NO_WhiteSpace) & " (Blank lines with no white spaces) "); 
       ATIO.Put_Line ("   cnt_lineNonBlank_NonWhiteSpace = " & Integer'Image(cnt_lineNonBlank_NonWhiteSpace) & " (Effective usable lines)"); 
       ATIO.Put_Line ("   Overall File cnt_lineTotal     = " & Integer'Image(cnt_lineTotal));
+      ATIO.New_Line;
       
       -- ==================================================    
       -- -- CLOSE: Attempt to open file using PAFOC package
-      ATIO.Put_Line("Running... PAFOC.exec_file_close (inp_fhandle_PAFLP, " & inp_fform & ", " & inp_fOwnID & ")");
+      -- ATIO.Put_Line("Running (2.2) ... PAFOC.exec_file_close (inp_fhandle_PAFLP, " & inp_fform & ", " & inp_fOwnID & ")");
       PAFOC.exec_file_close (inp_fhandle_PAFLP, inp_fform, inp_fOwnID);
-      ATIO.Put_Line("Completed: PAFOC.exec_file_close (inp_fhandle_PAFLP, " & inp_fform & ", " & inp_fOwnID & ")");
+      -- ATIO.Put_Line("Completed (2.2) ... PAFOC.exec_file_close (inp_fhandle_PAFLP, " & inp_fform & ", " & inp_fOwnID & ")");
       
    end exec_file_line_properties;
 

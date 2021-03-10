@@ -4,9 +4,12 @@ b__testdriver_main_ada_file_processing.o
 /home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr
 20210309014723
 [BOUND OBJECT FILES]
+/home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_datetime_stamp.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_open_close.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_line_properties.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_properties.o
+/home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_read_write.o
+/home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_remove_lines.o
 /home/wruslan/github-mit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
 [GENERATED SOURCE FILES]
 b__testdriver_main_ada_file_processing.ads
@@ -18,7 +21,10 @@ b__testdriver_main_ada_file_processing.ali
 -L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
 -shared
 -shared-libgcc
+-lgnarl-9
 -lgnat-9
+-lpthread
+-lrt
 -ldl
 [RUN PATH OPTION]
 /usr/lib/gcc/x86_64-linux-gnu/9/adalib/

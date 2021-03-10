@@ -1,0 +1,39 @@
+/home/wruslan/github-mit/ada-file-processing/exec/testdriver_main_ada_file_processing.adx
+STARTED: main Bismillah 3 times WRY
+
+Running (MAIN) ... PAFOC.exec_file_open (inp_fhandle_MAIN, inp_fmode, files/test_file.txt, shared=yes, ID: 00 testdriver_main)
+
+Running (1) ... PAFP.exec_file_properties (inp_fmode, files/test_file.txt, shared=yes, ID: 01 PAFP)
+Running (1.1) ... PAFOC.exec_file_open (inp_fhandle_PAFP, inp_fmode, files/test_file.txt, shared=yes, ID: 01 PAFP)
+
+   REPORT ON FILE PROPERTIES
+   inp_fmode  = IN_FILE
+   inp_fname  = files/test_file.txt
+   inp_fform  = shared=yes
+   inp_fOwnID = ID: 01 PAFP
+   File Size  =  1384 bytes
+   File Full_Name         = /home/wruslan/github-mit/ada-file-processing/files/test_file.txt
+   File Extension         = txt
+   File Modification_Time = 2021-03-10 05:24:43
+
+Running (1.2) ... PAFOC.exec_file_close (inp_fhandle_PAFP, shared=yes, ID: 01 PAFP)
+
+Running (2) ... PAFLP.exec_file_line_properties (inp_fmode, files/test_file.txt, shared=yes, ID: 02 PALFP)
+Running (2.1) ... PAFOC.exec_file_open (inp_fhandle_PAFLP, inp_fmode, files/test_file.txt, shared=yes, ID: 02 PALFP)
+
+   REPORT ON FILE LINE PROPERTIES
+      max_UBSLineLength           =  78
+      min_UBSlineLength           =  0
+   cnt_lineNull                   =  3 (True Null string blank lines)
+   cnt_lineNotNull                =  26 (Includes blank lines with all white spaces) 
+   cnt_lineBlank_BUT_WhiteSpace   =  5 (Blank lines with all white spaces) 
+   cnt_lineBlank_NO_WhiteSpace    =  3 (Blank lines with no white spaces) 
+   cnt_lineNonBlank_NonWhiteSpace =  21 (Effective usable lines)
+   Overall File cnt_lineTotal     =  29
+
+Running (2.2) ... PAFOC.exec_file_close (inp_fhandle_PAFLP, shared=yes, ID: 02 PALFP)
+
+Running (MAIN) ... PAFOC.exec_file_close (inp_fhandle_MAIN, shared=yes, ID: 00 testdriver_main)
+
+ENDED: main Alhamdulillah 3 times WRY
+[2021-03-10 18:34:52] process terminated successfully, elapsed time: 00.21s

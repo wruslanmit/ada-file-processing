@@ -234,4 +234,48 @@ ENDED: main Alhamdulillah 3 times WRY
 ===========================================================
 ALHAMDULILLAH 3 TIMES.
 ===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git add .
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git commit -m "completed pkg-ada-file-line-properties"
+[main ef463bd] completed pkg-ada-file-line-properties
+ 34 files changed, 1189 insertions(+), 376 deletions(-)
+ rename docs/{ => references}/design-packages.txt (98%)
+ rename docs/{ => references}/if-else-versus-case.txt (100%)
+ rename docs/{ => references}/reference-01.txt (100%)
+ create mode 100644 docs/references/report_pkg10_standardize_gcode_to_ngc.txt
+ rename docs/{ => references}/temp-1.txt (100%)
+ rename docs/{ => references}/temp-2.txt (100%)
+ create mode 100644 docs/references/trimming-lines.txt
+ create mode 100644 docs/references/use-of-unbounded-string.txt
+ create mode 100644 docs/session-02.txt
+ rewrite exec/testdriver_main_ada_file_processing.adx (88%)
+ rewrite obj/b__testdriver_main_ada_file_processing.o (76%)
+ create mode 100644 obj/pkg_ada_file_line_properties.adb.stderr
+ create mode 100644 obj/pkg_ada_file_line_properties.adb.stdout
+ create mode 100644 obj/pkg_ada_file_line_properties.ali
+ create mode 100644 obj/pkg_ada_file_line_properties.cswi
+ create mode 100644 obj/pkg_ada_file_line_properties.o
+ rewrite obj/pkg_ada_file_processing-loc.xml (84%)
+ rewrite obj/pkg_ada_file_properties.o (95%)
+ rewrite obj/testdriver_main_ada_file_processing.o (100%)
+ create mode 100644 src/pkg-ada-file-line-properties/pkg_ada_file_line_properties.adb
+ create mode 100644 src/pkg-ada-file-line-properties/pkg_ada_file_line_properties.ads
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git push origin main
+Username for 'https://github.com': wruslanmit
+Password for 'https://wruslanmit@github.com': 
+Enumerating objects: 52, done.
+Counting objects: 100% (52/52), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (36/36), 56.26 KiB | 3.52 MiB/s, done.
+Total 36 (delta 12), reused 0 (delta 0)
+remote: Resolving deltas: 100% (12/12), completed with 8 local objects.
+To https://github.com/wruslanmit/ada-file-processing.git
+   9275318..ef463bd  main -> main
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+===========================================================
+ALHAMDULILLAH 3 TIMES.
+===========================================================
 
