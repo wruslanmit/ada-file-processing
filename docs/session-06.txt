@@ -221,6 +221,29 @@ wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ tree ./
 wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
 
 ===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git add .
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git commit -m "pkg_ada_file_remove_lines.adb"
+[main eed6c35] pkg_ada_file_remove_lines.adb
+ 35 files changed, 2194 insertions(+), 337 deletions(-)
+ create mode 100644 docs/session-05.txt
+ create mode 100644 docs/session-06.txt
+ rewrite exec/testdriver_main_ada_file_processing.adx (87%)
+ create mode 100644 files/bismillah.ngc
+ create mode 100644 files/bismillah.ngc_after_blankline_removals.txt
+ create mode 100644 files/bismillah.ngc_after_blankline_removals.txt_report_05:26:52.23298909814.txt
+ create mode 100644 files/bismillah.ngc_after_blankline_removals.txt_report_05:29:19.23304588061.txt
+ create mode 100644 files/bismillah.ngc_after_substr(z[)_line_removals.txt
+ create mode 100644 files/bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:26:52.23299495292.txt
+ create mode 100644 files/bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:29:19.23305387841.txt
+ delete mode 100644 files/test_file.txt
+ delete mode 100644 files/test_file.txt_report_17:32:29.56956149539.txt
+ delete mode 100644 files/test_file_after_blankline_removals.txt
+ rewrite obj/pkg_ada_file_line_properties.o (93%)
+ rewrite obj/pkg_ada_file_remove_lines.o (75%)
+ rewrite obj/testdriver_main_ada_file_processing.o (100%)
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+
+===========================================================
 
 
 ===========================================================
