@@ -11,7 +11,7 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U testdriver_main_ada_file_processing%b  testdriver_main_ada_file_processing.adb  0f2f46d4 NE OO SU IL
+U testdriver_main_ada_file_processing%b  testdriver_main_ada_file_processing.adb  394ccf9b NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.strings%s		a-string.ads		a-string.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
@@ -45,7 +45,7 @@ D pkg_ada_file_line_properties.ads  20210309141522 4374faed pkg_ada_file_line_pr
 D pkg_ada_file_open_close.ads  20210309081234 3d9498dc pkg_ada_file_open_close%s
 D pkg_ada_file_properties.ads  20210309134813 161ad3b8 pkg_ada_file_properties%s
 D pkg_ada_file_read_write.ads  20210310110722 97959ce6 pkg_ada_file_read_write%s
-D pkg_ada_file_remove_lines.ads  20210310171423 1be1de00 pkg_ada_file_remove_lines%s
+D pkg_ada_file_remove_lines.ads  20210311015251 1be1de00 pkg_ada_file_remove_lines%s
 D system.ads		20200312110721 4635ec04 system%s
 D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
 D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
@@ -75,7 +75,7 @@ D s-taskin.ads		20200312110721 b9d612e2 system.tasking%s
 D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-D testdriver_main_ada_file_processing.adb  20210310171132 d3cdc6bd testdriver_main_ada_file_processing%b
+D testdriver_main_ada_file_processing.adb  20210311052803 e5ae4ff2 testdriver_main_ada_file_processing%b
 X 1 ada.ads
 16K9*Ada 20e8 53|9r6 10r6 11r6 28r27 29r27
 X 9 a-string.ads
@@ -89,52 +89,51 @@ X 13 a-textio.ads
 53n23*In_File{53E9} 53|45r47
 53n32*Out_File{53E9} 53|46r47
 53n42*Append_File{53E9} 53|47r47
-166U14*New_Line 53|78s9 124s9
-263U14*Put_Line 53|77s24 101s9 125s24
+166U14*New_Line 53|76s9 117s9
+263U14*Put_Line 53|75s24 118s24
 X 18 pkg_ada_datetime_stamp.ads
 10K9*pkg_ada_datetime_stamp 23e27 53|15w6 32r27
-18U14*dtstamp 53|77s10 125s10
+18U14*dtstamp 53|75s10 118s10
 X 19 pkg_ada_file_line_properties.ads
 8K9*pkg_ada_file_line_properties 27e33 53|18w6 35r27
-16U14*exec_file_line_properties 53|93s10
+16U14*exec_file_line_properties 53|91s10
 X 20 pkg_ada_file_open_close.ads
 8K9*pkg_ada_file_open_close 31e28 53|16w6 33r27
 X 21 pkg_ada_file_properties.ads
 8K9*pkg_ada_file_properties 36e28 53|17w6 34r27
-21U14*exec_file_properties 53|88s9
+21U14*exec_file_properties 53|86s9
 X 22 pkg_ada_file_read_write.ads
 10K9*pkg_ada_file_read_write 25e28 53|19w6 36r27
 X 23 pkg_ada_file_remove_lines.ads
 8K9*pkg_ada_file_remove_lines 22e30 53|20w6 37r27
-16U14*exec_remove_blank_lines 53|98s10
-17U14*exec_remove_lines_oncondition 53|102s10
+16U14*exec_remove_blank_lines 53|96s10
+17U14*exec_remove_lines_oncondition 53|97s10
 X 40 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 X 53 testdriver_main_ada_file_processing.adb
-23U11*testdriver_main_ada_file_processing 23b11 127l5 127t40
-28K12 ATIO=28:31 42r23 43r23 45r23 45r42 46r23 46r42 47r23 47r42 77r19 78r4
-. 101r4 124r4 125r19
+23U11*testdriver_main_ada_file_processing 23b11 120l5 120t40
+28K12 ATIO=28:31 42r23 43r23 45r23 45r42 46r23 46r42 47r23 47r42 75r19 76r4
+. 117r4 118r19
 29K12 ASU=29:39
-32K12 PADTS=32:27 77r4 125r4
+32K12 PADTS=32:27 75r4 118r4
 33K12 PAFOC=33:27
-34K12 PAFP=34:27 88r4
-35K12 PAFLP=35:27 93r4
+34K12 PAFP=34:27 86r4
+35K12 PAFLP=35:27 91r4
 36K12 PAFRW=36:27
-37K12 PAFRL=37:27 98r4 102r4
+37K12 PAFRL=37:27 96r4 97r4
 42p4 inp_fhandle_main{13|52P9}
 43p4 inp_fhandle{13|52P9}
-45e4 inp_fmode{13|53E9} 88r31 93r37
+45e4 inp_fmode{13|53E9} 86r31 91r37
 46e4 out_fmode{13|53E9}
 47e4 app_fmode{13|53E9}
-51a4 inp_fname_01{string} 88r42 93r48 98r35
-52a4 out_fname_01{string} 98r49
-54a4 inp_fname_02{string} 102r41
-55a4 out_fname_02{string} 102r55
-57a4 substr_condition_02{string} 102r69
-58a4 substr_condition_03{string}
-66a4 inp_fform{string} 88r56 93r62
-69a4 inp_fOwnID_00{string}
-70a4 inp_fOwnID_01{string} 88r67
-71a4 inp_fOwnID_02{string} 93r73
+51a4 inp_fname_01{string} 86r42 91r48 96r35
+52a4 out_fname_01{string} 96r49
+54a4 inp_fname_02{string} 97r41
+55a4 substr_condition_02{string} 97r69
+56a4 out_fname_02{string} 97r55
+64a4 inp_fform{string} 86r56 91r62
+67a4 inp_fOwnID_00{string}
+68a4 inp_fOwnID_01{string} 86r67
+69a4 inp_fOwnID_02{string} 91r73
 

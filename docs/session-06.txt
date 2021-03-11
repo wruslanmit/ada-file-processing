@@ -1,3 +1,6 @@
+
+COMPILATION
+===========================================================
 gprbuild -d -P/home/wruslan/github-mit/ada-file-processing/pkg_ada_file_processing.gpr -s -k
 Compile
    [Ada]          testdriver_main_ada_file_processing.adb
@@ -12,64 +15,93 @@ Bind
    [Ada]          testdriver_main_ada_file_processing.ali
 Link
    [link]         testdriver_main_ada_file_processing.adb
-[2021-03-11 01:31:26] process terminated successfully, elapsed time: 01.86s
+[2021-03-11 13:28:18] process terminated successfully, elapsed time: 01.86s
 
+EXECUTION
 ===========================================================
 /home/wruslan/github-mit/ada-file-processing/exec/testdriver_main_ada_file_processing.adx
-2021-03-10 17:32:29.56955854303 STARTED: main Bismillah 3 times WRY
+2021-03-11 05:29:19.23304238496 STARTED: main Bismillah 3 times WRY
 
 REPORT ON FILE PROPERTIES
    inp_fmode  = IN_FILE
-   inp_fname  = files/test_file.txt
+   inp_fname  = files/bismillah.ngc
    inp_fform  = shared=yes
    inp_fOwnID = ID: 01 PAFP
-   File Size  =  1384 bytes
-   Full_Name  = /home/wruslan/github-mit/ada-file-processing/files/test_file.txt
-   Extension  = txt
-   Modification_Time = 2021-03-10 05:24:43
+   File Size  =  16410 bytes
+   Full_Name  = /home/wruslan/github-mit/ada-file-processing/files/bismillah.ngc
+   Extension  = ngc
+   Modification_Time = 2021-03-10 12:57:20
 
 REPORT ON FILE LINE PROPERTIES
-      max_UBSLineLength           =  78
+   Line properties of file        = /home/wruslan/github-mit/ada-file-processing/files/bismillah.ngc
+      max_UBSLineLength           =  101
       min_UBSlineLength           =  0
-   cnt_lineNull                   =  3 (True Null string blank lines)
-   cnt_lineNotNull                =  26 (Includes blank lines with all white spaces) 
-   cnt_lineBlank_BUT_WhiteSpace   =  5 (Blank lines with all white spaces) 
-   cnt_lineBlank_NO_WhiteSpace    =  3 (Blank lines with no white spaces) 
-   cnt_lineNonBlank_NonWhiteSpace =  21 (Effective usable lines)
-   Overall File cnt_lineTotal     =  29
+   cnt_lineNull                   =  59 (True Null string blank lines)
+   cnt_lineNotNull                =  269 (Includes blank lines with all white spaces) 
+   cnt_lineBlank_BUT_WhiteSpace   =  3 (Blank lines with all white spaces) 
+   cnt_lineBlank_NO_WhiteSpace    =  59 (Blank lines with no white spaces) 
+   cnt_lineNonBlank_NonWhiteSpace =  266 (Effective usable lines)
+   Overall File cnt_lineTotal     =  328
 
 
 REPORT ON FILE BLANK LINE REMOVALS
-   cnt_lineRemoved                =  8
-   cnt_lineRemaining              =  21
-   cnt_lineBlank_BUT_WhiteSpace   =  5 (Blank lines with all white spaces) 
-   cnt_lineBlank_NO_WhiteSpace    =  3 (Blank lines with no white spaces) 
-   cnt_lineNonBlank_NonWhiteSpace =  21 (Effective usable lines)
-   Overall File cnt_lineTotal     =  29
+   cnt_lineRemoved                =  62
+   cnt_lineRemaining              =  266
+   cnt_lineBlank_BUT_WhiteSpace   =  3 (Blank lines with all white spaces) 
+   cnt_lineBlank_NO_WhiteSpace    =  59 (Blank lines with no white spaces) 
+   cnt_lineNonBlank_NonWhiteSpace =  266 (Effective usable lines)
+   Overall File cnt_lineTotal     =  328
+   inp_fname: files/bismillah.ngc
+   out_fname: files/bismillah.ngc_after_blankline_removals.txt
+   rep_fname: files/bismillah.ngc_after_blankline_removals.txt_report_05:29:19.23304588061.txt
 
-inp_fname: files/test_file.txt
-out_fname: files/test_file_after_blankline_removals.txt
-rep_fname: files/test_file.txt_report_17:32:29.56956149539.txt
+REPORT ON FILE ON-CONDITION LINE REMOVALS
+   on-condition line removal      = "Z["
+   cnt_lineRemoved                =  193
+   cnt_lineRemaining              =  73
+   Overall File cnt_lineTotal     =  266
+   inp_fname: files/bismillah.ngc_after_blankline_removals.txt
+   out_fname: files/bismillah.ngc_after_substr(z[)_line_removals.txt
+   rep_fname: files/bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:29:19.23305387841.txt
 
-Running (3) ... PAFRL
 
-2021-03-10 17:32:29.56956518730 ENDED: main Alhamdulillah 3 times WRY
-[2021-03-11 01:32:29] process terminated successfully, elapsed time: 00.20s
+2021-03-11 05:29:19.23306166091 ENDED: main Alhamdulillah 3 times WRY
+[2021-03-11 13:29:19] process terminated successfully, elapsed time: 00.20s
 
 ===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit$ cd ada-file-processing/
 wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ ls -al
 total 44
 drwxrwxr-x  9 wruslan wruslan 4096 Mar  9 09:47 .
 drwxrwxr-x  9 wruslan wruslan 4096 Mar 10 18:09 ..
-drwxrwxr-x  3 wruslan wruslan 4096 Mar 11 01:33 docs
-drwxrwxr-x  2 wruslan wruslan 4096 Mar 11 01:31 exec
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 11 13:30 docs
+drwxrwxr-x  2 wruslan wruslan 4096 Mar 11 13:28 exec
 drwxrwxr-x  2 wruslan wruslan 4096 Mar  6 14:23 figures
-drwxrwxr-x  3 wruslan wruslan 4096 Mar 11 01:32 files
-drwxrwxr-x  8 wruslan wruslan 4096 Mar 11 01:29 .git
-drwxrwxr-x  2 wruslan wruslan 4096 Mar 11 01:31 obj
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 11 13:29 files
+drwxrwxr-x  8 wruslan wruslan 4096 Mar 11 13:28 .git
+drwxrwxr-x  2 wruslan wruslan 4096 Mar 11 13:28 obj
 -rw-rw-r--  1 wruslan wruslan 1892 Mar  9 09:47 pkg_ada_file_processing.gpr
 -rw-rw-r--  1 wruslan wruslan   62 Mar  6 14:21 README.md
-drwxrwxr-x 10 wruslan wruslan 4096 Mar 11 01:11 src
+drwxrwxr-x 10 wruslan wruslan 4096 Mar 11 13:28 src
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ tree files
+files
+├── bismillah.ngc
+├── bismillah.ngc_after_blankline_removals.txt
+├── bismillah.ngc_after_blankline_removals.txt_report_05:26:52.23298909814.txt
+├── bismillah.ngc_after_blankline_removals.txt_report_05:29:19.23304588061.txt
+├── bismillah.ngc_after_substr(z[)_line_removals.txt
+├── bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:26:52.23299495292.txt
+├── bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:29:19.23305387841.txt
+└── ngc-files
+    ├── bismillah.ngc
+    ├── butterfly.nc
+    ├── just-KSG.ngc
+    └── linuxcnc-logo.nc
+
+1 directory, 11 files
 wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
 
 ===========================================================
@@ -88,19 +120,25 @@ wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ tree ./
 │   ├── session-01.txt
 │   ├── session-02.txt
 │   ├── session-03.txt
-│   └── session-04.txt
+│   ├── session-04.txt
+│   ├── session-05.txt
+│   └── session-06.txt
 ├── exec
 │   └── testdriver_main_ada_file_processing.adx
 ├── figures
 ├── files
-│   ├── ngc-files
-│   │   ├── bismillah.ngc
-│   │   ├── butterfly.nc
-│   │   ├── just-KSG.ngc
-│   │   └── linuxcnc-logo.nc
-│   ├── test_file_after_blankline_removals.txt
-│   ├── test_file.txt
-│   └── test_file.txt_report_17:32:29.56956149539.txt
+│   ├── bismillah.ngc
+│   ├── bismillah.ngc_after_blankline_removals.txt
+│   ├── bismillah.ngc_after_blankline_removals.txt_report_05:26:52.23298909814.txt
+│   ├── bismillah.ngc_after_blankline_removals.txt_report_05:29:19.23304588061.txt
+│   ├── bismillah.ngc_after_substr(z[)_line_removals.txt
+│   ├── bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:26:52.23299495292.txt
+│   ├── bismillah.ngc_after_substr(z[)_line_removals.txt_report_05:29:19.23305387841.txt
+│   └── ngc-files
+│       ├── bismillah.ngc
+│       ├── butterfly.nc
+│       ├── just-KSG.ngc
+│       └── linuxcnc-logo.nc
 ├── obj
 │   ├── b__testdriver_main_ada_file_processing.adb
 │   ├── b__testdriver_main_ada_file_processing.ads
@@ -179,65 +217,12 @@ wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ tree ./
     ├── pkg-ada-file-trim-lines
     └── testdriver_main_ada_file_processing.adb
 
-16 directories, 87 files
+16 directories, 93 files
 wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
 
 ===========================================================
-wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git add .
-wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git commit -m "exec_file_remove_blank_lines done."
-[main 0cda92d] exec_file_remove_blank_lines done.
- 50 files changed, 2818 insertions(+), 388 deletions(-)
- create mode 100644 docs/session-03.txt
- create mode 100644 docs/session-04.txt
- rewrite exec/testdriver_main_ada_file_processing.adx (93%)
- create mode 100644 files/ngc-files/bismillah.ngc
- create mode 100644 files/ngc-files/butterfly.nc
- create mode 100755 files/ngc-files/just-KSG.ngc
- create mode 100644 files/ngc-files/linuxcnc-logo.nc
- create mode 100644 files/test_file.txt_report_17:32:29.56956149539.txt
- create mode 100644 files/test_file_after_blankline_removals.txt
- rewrite obj/b__testdriver_main_ada_file_processing.o (83%)
- create mode 100644 obj/pkg_ada_datetime_stamp.adb.stderr
- create mode 100644 obj/pkg_ada_datetime_stamp.adb.stdout
- create mode 100644 obj/pkg_ada_datetime_stamp.ali
- create mode 100644 obj/pkg_ada_datetime_stamp.cswi
- create mode 100644 obj/pkg_ada_datetime_stamp.o
- rewrite obj/pkg_ada_file_line_properties.o (97%)
- rewrite obj/pkg_ada_file_properties.o (97%)
- create mode 100644 obj/pkg_ada_file_read_write.adb.stderr
- create mode 100644 obj/pkg_ada_file_read_write.adb.stdout
- create mode 100644 obj/pkg_ada_file_read_write.ali
- create mode 100644 obj/pkg_ada_file_read_write.cswi
- create mode 100644 obj/pkg_ada_file_read_write.o
- create mode 100644 obj/pkg_ada_file_remove_lines.adb.stderr
- create mode 100644 obj/pkg_ada_file_remove_lines.adb.stdout
- create mode 100644 obj/pkg_ada_file_remove_lines.ali
- create mode 100644 obj/pkg_ada_file_remove_lines.cswi
- create mode 100644 obj/pkg_ada_file_remove_lines.o
- rewrite obj/testdriver_main_ada_file_processing.o (100%)
- create mode 100644 src/pkg-ada-datetime-stamp/pkg_ada_datetime_stamp.adb
- create mode 100644 src/pkg-ada-datetime-stamp/pkg_ada_datetime_stamp.ads
- create mode 100644 src/pkg-ada-file-read-write/pkg_ada_file_read_write.adb
- create mode 100644 src/pkg-ada-file-read-write/pkg_ada_file_read_write.ads
- create mode 100644 src/pkg-ada-file-remove-lines/pkg_ada_file_remove_lines.adb
- create mode 100644 src/pkg-ada-file-remove-lines/pkg_ada_file_remove_lines.ads
-wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
 
-wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ git push origin main
-Username for 'https://github.com': wruslanmit
-Password for 'https://wruslanmit@github.com': 
-Enumerating objects: 72, done.
-Counting objects: 100% (72/72), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (50/50), done.
-Writing objects: 100% (52/52), 105.35 KiB | 4.39 MiB/s, done.
-Total 52 (delta 15), reused 0 (delta 0)
-remote: Resolving deltas: 100% (15/15), completed with 10 local objects.
-To https://github.com/wruslanmit/ada-file-processing.git
-   ef463bd..0cda92d  main -> main
-wruslan@HPEliteBook8470p-Ub2004-rt38:~/github-mit/ada-file-processing$ 
 
 ===========================================================
 ALHAMDULILLAH 3 TIMES.
 ===========================================================
-

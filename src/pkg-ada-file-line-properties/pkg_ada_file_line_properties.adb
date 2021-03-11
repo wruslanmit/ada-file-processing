@@ -8,6 +8,7 @@ with Ada.Text_IO;
 with Ada.Strings.Unbounded;
 use  Ada.Strings.Unbounded;  -- For ASU.Null_Unbounded_String
 with Ada.Strings.Fixed;      -- For ASF.Index_Non_Blank
+with Ada.Directories;  
 
 with pkg_ada_file_open_close;
 
@@ -21,7 +22,8 @@ is
    package ATIO   renames Ada.Text_IO;
    package ASU    renames Ada.Strings.Unbounded;
    package ASF    renames Ada.Strings.Fixed;
-
+   package AD     renames Ada.Directories; 
+   
    package PAFOC  renames pkg_ada_file_open_close;
    
    -- =======================================================
@@ -193,9 +195,9 @@ is
       -- ==================================================
       ATIO.New_Line;
       ATIO.Put_Line ("REPORT ON FILE LINE PROPERTIES");
+      ATIO.Put_Line ("   Line properties of file        = " & AD.Full_Name (inp_fname));
       ATIO.Put_Line ("      max_UBSLineLength           = " & Integer'Image(max_UBSLineLength));
       ATIO.Put_Line ("      min_UBSlineLength           = " & Integer'Image(min_UBSlineLength));
-      
       ATIO.Put_Line ("   cnt_lineNull                   = " & Integer'Image(cnt_lineNull) & " (True Null string blank lines)" ); 
       ATIO.Put_Line ("   cnt_lineNotNull                = " & Integer'Image(cnt_lineNotNull) & " (Includes blank lines with all white spaces) "); 
        

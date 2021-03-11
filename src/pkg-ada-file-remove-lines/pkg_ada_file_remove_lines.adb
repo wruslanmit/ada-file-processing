@@ -7,7 +7,9 @@
 with Ada.Text_IO;
 with Ada.Characters.Latin_1;
 with Ada.Strings.Unbounded;   use Ada.Strings.Unbounded;
+with Ada.Strings;
 with Ada.Strings.Fixed;
+-- with Ada.Strings.Search;
 with Ada.Real_Time;
 
 -- WRY CREATED PACKAGES 
@@ -22,6 +24,7 @@ is
    package ATIO   renames Ada.Text_IO;
    package ASU    renames Ada.Strings.Unbounded;
    package ASF    renames Ada.Strings.Fixed;
+   package AS    renames Ada.Strings;
    package ACL1   renames Ada.Characters.Latin_1;
    package ART    renames Ada.Real_Time;
    package PADTS  renames pkg_ada_datetime_stamp;
@@ -56,7 +59,15 @@ is
    cnt_lineBlank_NO_WhiteSpace    : Integer := 999;  -- Truly "Null" line
    cnt_lineNonBlank_NonWhiteSpace : Integer := 999;
            
-   UBSTimeString : ASU.Unbounded_String;
+   UBSTimeString   : ASU.Unbounded_String;
+   
+   -- SEARCH substring ASU.Index (Unbounded_String, subtring) return Natural;
+   substr_found    : Boolean := False;
+   int_substrIndex : Natural := 999; -- First location of substring in Unbounded_String
+     
+   -- TESTING ONLY In REMOVE ON-CONDITION
+   -- first_1Char  : String := "1"; -- INITIALIZATION ONLY 
+   -- first_3Chars : String := "123"; -- INITIALIZATION ONLY 
    
    -- =====================================================
    procedure exec_remove_blank_lines (inp_fname : in String;
@@ -72,8 +83,7 @@ is
       
       -- CHECK REPORT FILE NAME
       UBSTimeString := PADTS.get_time_stamp (ART.Clock); -- return AASU.Unbounded_String;
-      
-      rep_UBSfname := ASU.To_Unbounded_String(inp_fname) & ("_report_") 
+      rep_UBSfname := ASU.To_Unbounded_String(out_fname) & ("_report_") 
                     & ASU.To_String (UBSTimeString) & (".txt");  
       -- ATIO.Put_Line ("rep_fname: " & ASU.To_String (rep_UBSfname));
       
@@ -165,15 +175,13 @@ is
       ATIO.Put_Line ("REPORT ON FILE BLANK LINE REMOVALS");
       ATIO.Put_Line ("   cnt_lineRemoved                = " & Integer'Image(cnt_lineRemoved));  
       ATIO.Put_Line ("   cnt_lineRemaining              = " & Integer'Image(cnt_lineRemaining));
-      
       ATIO.Put_Line ("   cnt_lineBlank_BUT_WhiteSpace   = " & Integer'Image(cnt_lineBlank_BUT_WhiteSpace) & " (Blank lines with all white spaces) "); 
       ATIO.Put_Line ("   cnt_lineBlank_NO_WhiteSpace    = " & Integer'Image(cnt_lineBlank_NO_WhiteSpace) & " (Blank lines with no white spaces) "); 
       ATIO.Put_Line ("   cnt_lineNonBlank_NonWhiteSpace = " & Integer'Image(cnt_lineNonBlank_NonWhiteSpace) & " (Effective usable lines)"); 
       ATIO.Put_Line ("   Overall File cnt_lineTotal     = " & Integer'Image(cnt_lineTotal));
-      ATIO.New_Line;
-      ATIO.Put_Line ("inp_fname: " & inp_fname);
-      ATIO.Put_Line ("out_fname: " & out_fname);
-      ATIO.Put_Line ("rep_fname: " & ASU.To_String (rep_UBSfname));
+      ATIO.Put_Line ("   inp_fname: " & inp_fname);
+      ATIO.Put_Line ("   out_fname: " & out_fname);
+      ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
       ATIO.New_Line;
       
       -- WRITE TO TERMINAL (SCREEN)
@@ -182,15 +190,13 @@ is
       ATIO.Put_Line ("REPORT ON FILE BLANK LINE REMOVALS");
       ATIO.Put_Line ("   cnt_lineRemoved                = " & Integer'Image(cnt_lineRemoved));  
       ATIO.Put_Line ("   cnt_lineRemaining              = " & Integer'Image(cnt_lineRemaining));
-      
       ATIO.Put_Line ("   cnt_lineBlank_BUT_WhiteSpace   = " & Integer'Image(cnt_lineBlank_BUT_WhiteSpace) & " (Blank lines with all white spaces) "); 
       ATIO.Put_Line ("   cnt_lineBlank_NO_WhiteSpace    = " & Integer'Image(cnt_lineBlank_NO_WhiteSpace) & " (Blank lines with no white spaces) "); 
       ATIO.Put_Line ("   cnt_lineNonBlank_NonWhiteSpace = " & Integer'Image(cnt_lineNonBlank_NonWhiteSpace) & " (Effective usable lines)"); 
       ATIO.Put_Line ("   Overall File cnt_lineTotal     = " & Integer'Image(cnt_lineTotal));
-      ATIO.New_Line;
-      ATIO.Put_Line ("inp_fname: " & inp_fname);
-      ATIO.Put_Line ("out_fname: " & out_fname);
-      ATIO.Put_Line ("rep_fname: " & ASU.To_String (rep_UBSfname));
+      ATIO.Put_Line ("   inp_fname: " & inp_fname);
+      ATIO.Put_Line ("   out_fname: " & out_fname);
+      ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
       ATIO.New_Line;
       
       -- ==================================================
@@ -209,10 +215,121 @@ is
    -- =====================================================
    -- with SPARK_Mode => on
    is
-      
+   
    begin
    
-     null;
+      -- CHECK FILE INPUT PARAMETERS
+      -- ATIO.Put_Line ("inp_fname: " & inp_fname);
+      -- ATIO.Put_Line ("out_fname: " & out_fname);
+      -- ATIO.Put_Line ("substr_condition: " & substr_condition);
+      
+      -- CHECK REPORT FILE NAME
+      UBSTimeString := PADTS.get_time_stamp (ART.Clock); -- return AASU.Unbounded_String;
+      rep_UBSfname := ASU.To_Unbounded_String(out_fname) & ("_report_") 
+                    & ASU.To_String (UBSTimeString) & (".txt");  
+      -- ATIO.Put_Line ("rep_fname: " & ASU.To_String (rep_UBSfname));
+      
+      -- OPEN INPUT, OUTPUT AND REPORT FILES
+      ATIO.Open   (inp_fhandle, ATIO.In_File,  inp_fname);
+      ATIO.Create (out_fhandle, ATIO.Out_File, out_fname);
+      ATIO.Create (rep_fhandle, ATIO.Out_File, ASU.To_String (rep_UBSfname));
+      
+      lineCount         := 0;
+      cnt_lineRemoved   := 0;
+      cnt_lineRemaining := 0;
+      
+      
+      substr_found := False;
+      int_substrIndex := 0;
+ 
+      -- =================================================
+      -- RUN READ AND WRITE LOOP FOR BOTH INPUT/OUTPUT FILES
+      -- ==================================================
+      while not ATIO.End_Of_File (inp_fhandle) loop
+         inp_UBSlineStr := ASU.To_Unbounded_String(ATIO.Get_Line (inp_fhandle));
+         lineCount := lineCount + 1;
+         
+         -- GRAB LINES WITH SUBSTRING FOUND IN INPUT FILE 
+         -- ATIO.Put_Line ("substr_condition: " & substr_condition);
+         
+         -- ===============================================
+         -- LESSON
+         -- NOTE: CANNOT first_3Chars USE BECAUSE SOME LINES HAVE ONLY 1 Char. 
+         -- Then Ada engine gives raised ADA.STRINGS.INDEX_ERROR : a-strunb.adb:2027
+         -- But valid to use first_1Char (testing only) because all blank lines are already removed'
+         -- Otherwise, Ada engine will again raise ADA.STRINGS.INDEX_ERROR : a-strunb.adb:2027
+         -- first_1Char  := ASU.To_String (ASU.Unbounded_Slice(inp_UBSlineStr, 1, 1));
+         -- if (first_1Char = "(") then
+         -- ===============================================
+         
+         -- SUBSTRING SEARCH Unbounded_String USING ASU
+         -- EXPANDED FOR CLARITY ONLY  
+         int_substrIndex := ASU.Index(inp_UBSlineStr, substr_condition);
+         if (int_substrIndex > 0) then 
+            substr_found    := True;
+         else   
+            substr_found := False;
+         end if;
+         
+         if (substr_found) then
+             cnt_lineRemoved := cnt_lineRemoved + 1;
+         
+         --   WRITE TO REPORT FILE LINEN0: XXX REMOVED 
+              ATIO.Put (rep_fhandle, "LINENO: " & Integer'Image(lineCount));
+              ATIO.Put (rep_fhandle, " REMOVED. SUBSTRLOC: " & Natural'Image(int_substrIndex));
+              ATIO.Put_Line (rep_fhandle, " LINESTR = " &  ASU.To_String (inp_UBSlineStr));
+         
+         --   WRITE TO TERMINAL SCREEN LINEN0: XXX REMOVED 
+              -- ATIO.Put ("LINENO: " & Integer'Image(lineCount));
+              -- ATIO.Put (" REMOVED. SUBSTRLOC: " & Natural'Image(int_substrIndex));
+              -- ATIO.Put_Line (" LINESTR = " &  ASU.To_String (inp_UBSlineStr));
+         
+         else
+            cnt_lineRemaining := cnt_lineRemaining + 1;
+         
+         -- WRITE TO OUTPUT FILE LINEN0: XXX MAINTAINED 
+            ATIO.Put_Line (out_fhandle, ASU.To_String (inp_UBSlineStr));
+         
+         -- WRITE TO TERMINAL SCREEN LINEN0: XXX MAINTAINED 
+            -- ATIO.Put_Line (ASU.To_String (inp_UBSlineStr));
+         
+         end if;
+      
+      end loop;
+      -- ==================================================
+      cnt_lineTotal := lineCount;
+      
+      -- WRITE TO REPORT FILE
+      ATIO.Set_Output (rep_fhandle);
+      ATIO.New_Line;
+      ATIO.Put_Line ("REPORT ON FILE ON-CONDITION LINE REMOVALS");
+      ATIO.Put_Line ("   on-condition line removal      = """ & substr_condition & """");  
+      ATIO.Put_Line ("   cnt_lineRemoved                = " & Integer'Image(cnt_lineRemoved));  
+      ATIO.Put_Line ("   cnt_lineRemaining              = " & Integer'Image(cnt_lineRemaining));
+      ATIO.Put_Line ("   Overall File cnt_lineTotal     = " & Integer'Image(cnt_lineTotal));
+      ATIO.Put_Line ("   inp_fname: " & inp_fname);
+      ATIO.Put_Line ("   out_fname: " & out_fname);
+      ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
+      ATIO.New_Line;
+      
+      -- WRITE TO TERMINAL (SCREEN)
+      ATIO.Set_Output (ATIO.Standard_Output);
+      ATIO.Put_Line ("REPORT ON FILE ON-CONDITION LINE REMOVALS");
+      ATIO.Put_Line ("   on-condition line removal      = """ & substr_condition & """");  
+      ATIO.Put_Line ("   cnt_lineRemoved                = " & Integer'Image(cnt_lineRemoved));  
+      ATIO.Put_Line ("   cnt_lineRemaining              = " & Integer'Image(cnt_lineRemaining));
+      ATIO.Put_Line ("   Overall File cnt_lineTotal     = " & Integer'Image(cnt_lineTotal));
+      ATIO.Put_Line ("   inp_fname: " & inp_fname);
+      ATIO.Put_Line ("   out_fname: " & out_fname);
+      ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
+      ATIO.New_Line;
+  
+     -- ==================================================
+      -- CLOSE INPUT, OUTPUT AND REPORT FILES
+      ATIO.Close (inp_fhandle);
+      ATIO.Close (out_fhandle);
+      ATIO.Close (rep_fhandle); 
+     -- null;
    end exec_remove_lines_oncondition;
 -- =======================================================
 begin

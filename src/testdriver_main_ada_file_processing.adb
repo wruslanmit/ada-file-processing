@@ -48,15 +48,13 @@ is
    
    -- MUST SELECT ONLY ONE FILE
    
-   inp_fname_01     : String := "files/test_file.txt"; 
-   out_fname_01     : String := "files/test_file_after_blankline_removals.txt";
+   inp_fname_01     : String := "files/bismillah.ngc"; 
+   out_fname_01     : String := "files/bismillah.ngc_after_blankline_removals.txt";
    
-   inp_fname_02     : String := "files/test_file_after_blankline_removals.txt";
-   out_fname_02     : String := "files/test_file_after_hash_line_removals.txt";
-   
-   substr_condition_02 : String := "ONLY"; -- Lines containing substring "ONLY"
-   substr_condition_03 : String := "#";    -- Lines containing substring  hash
-   
+   inp_fname_02        : String := "files/bismillah.ngc_after_blankline_removals.txt";
+   substr_condition_02 : String := "Z["; -- Lines containing substring "Z["
+   out_fname_02        : String := "files/bismillah.ngc_after_substr(z[)_line_removals.txt";
+        
    -- inp_fname      : String := "files/ngc-files/bismillah.ngc";
    -- inp_fname      : String := "files/ngc-files/butterfly.nc";
    -- inp_fname      : String := "files/ngc-files/just-KSG.ngc";
@@ -96,14 +94,9 @@ begin  -- FOR procedure main_xxx
    -- (3) EXECUTE PAFRL - pkg-ada-file-remove-lines
    -- =====================================================
    PAFRL.exec_remove_blank_lines (inp_fname_01, out_fname_01);
-   
-   -- ATIO.New_Line;
-   ATIO.Put_Line("Running (3) ... PAFRL");
    PAFRL.exec_remove_lines_oncondition (inp_fname_02, out_fname_02, substr_condition_02); 
    
-   -- exec_remove_lines_oncondition (inp_fname : in String; out_fname : in out String; pattern_substring : in String); 
-   
-   
+  
    -- =====================================================
    -- (4) EXECUTE PAFTL - pkg-ada-file-trim-lines
    -- =====================================================

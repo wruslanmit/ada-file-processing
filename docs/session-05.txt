@@ -1,0 +1,41 @@
+/home/wruslan/github-mit/ada-file-processing/exec/testdriver_main_ada_file_processing.adx
+2021-03-10 17:45:51.43824334203 STARTED: main Bismillah 3 times WRY
+
+REPORT ON FILE PROPERTIES
+   inp_fmode  = IN_FILE
+   inp_fname  = files/bismillah.ngc
+   inp_fform  = shared=yes
+   inp_fOwnID = ID: 01 PAFP
+   File Size  =  16410 bytes
+   Full_Name  = /home/wruslan/github-mit/ada-file-processing/files/bismillah.ngc
+   Extension  = ngc
+   Modification_Time = 2021-03-10 12:57:20
+
+REPORT ON FILE LINE PROPERTIES
+      max_UBSLineLength           =  101
+      min_UBSlineLength           =  0
+   cnt_lineNull                   =  59 (True Null string blank lines)
+   cnt_lineNotNull                =  269 (Includes blank lines with all white spaces) 
+   cnt_lineBlank_BUT_WhiteSpace   =  3 (Blank lines with all white spaces) 
+   cnt_lineBlank_NO_WhiteSpace    =  59 (Blank lines with no white spaces) 
+   cnt_lineNonBlank_NonWhiteSpace =  266 (Effective usable lines)
+   Overall File cnt_lineTotal     =  328
+
+
+REPORT ON FILE BLANK LINE REMOVALS
+   cnt_lineRemoved                =  62
+   cnt_lineRemaining              =  266
+   cnt_lineBlank_BUT_WhiteSpace   =  3 (Blank lines with all white spaces) 
+   cnt_lineBlank_NO_WhiteSpace    =  59 (Blank lines with no white spaces) 
+   cnt_lineNonBlank_NonWhiteSpace =  266 (Effective usable lines)
+   Overall File cnt_lineTotal     =  328
+
+inp_fname: files/bismillah.ngc
+out_fname: files/bismillah.ngc_after_blankline_removals.txt
+rep_fname: files/bismillah.ngc_report_17:45:51.43824948327.txt
+
+Running (3) ... PAFRL
+
+2021-03-10 17:45:51.43825619118 ENDED: main Alhamdulillah 3 times WRY
+[2021-03-11 01:45:51] process terminated successfully, elapsed time: 00.21s
+

@@ -38,12 +38,12 @@ package body ada_main is
    E145 : Short_Integer; pragma Import (Ada, E145, "ada__calendar__time_zones_E");
    E159 : Short_Integer; pragma Import (Ada, E159, "ada__real_time_E");
    E130 : Short_Integer; pragma Import (Ada, E130, "ada__text_io_E");
-   E209 : Short_Integer; pragma Import (Ada, E209, "system__regexp_E");
-   E204 : Short_Integer; pragma Import (Ada, E204, "ada__directories_E");
+   E201 : Short_Integer; pragma Import (Ada, E201, "system__regexp_E");
+   E194 : Short_Integer; pragma Import (Ada, E194, "ada__directories_E");
    E137 : Short_Integer; pragma Import (Ada, E137, "pkg_ada_datetime_stamp_E");
-   E196 : Short_Integer; pragma Import (Ada, E196, "pkg_ada_file_open_close_E");
+   E203 : Short_Integer; pragma Import (Ada, E203, "pkg_ada_file_open_close_E");
    E192 : Short_Integer; pragma Import (Ada, E192, "pkg_ada_file_line_properties_E");
-   E202 : Short_Integer; pragma Import (Ada, E202, "pkg_ada_file_properties_E");
+   E209 : Short_Integer; pragma Import (Ada, E209, "pkg_ada_file_properties_E");
    E211 : Short_Integer; pragma Import (Ada, E211, "pkg_ada_file_read_write_E");
    E222 : Short_Integer; pragma Import (Ada, E222, "pkg_ada_file_remove_lines_E");
 
@@ -56,14 +56,14 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E204 := E204 - 1;
+      E194 := E194 - 1;
       declare
          procedure F1;
          pragma Import (Ada, F1, "ada__directories__finalize_spec");
       begin
          F1;
       end;
-      E209 := E209 - 1;
+      E201 := E201 - 1;
       declare
          procedure F2;
          pragma Import (Ada, F2, "system__regexp__finalize_spec");
@@ -276,18 +276,18 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E130 := E130 + 1;
       System.Regexp'Elab_Spec;
-      E209 := E209 + 1;
+      E201 := E201 + 1;
       Ada.Directories'Elab_Spec;
       Ada.Directories'Elab_Body;
-      E204 := E204 + 1;
+      E194 := E194 + 1;
       pkg_ada_datetime_stamp'elab_body;
       E137 := E137 + 1;
       pkg_ada_file_open_close'elab_body;
-      E196 := E196 + 1;
+      E203 := E203 + 1;
       pkg_ada_file_line_properties'elab_body;
       E192 := E192 + 1;
       pkg_ada_file_properties'elab_body;
-      E202 := E202 + 1;
+      E209 := E209 + 1;
       pkg_ada_file_read_write'elab_body;
       E211 := E211 + 1;
       pkg_ada_file_remove_lines'elab_body;
