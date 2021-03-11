@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#394ccf9b#;
+   u00001 : constant Version_32 := 16#c739850a#;
    pragma Export (C, u00001, "testdriver_main_ada_file_processingB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -477,14 +477,18 @@ package ada_main is
    pragma Export (C, u00219, "ada__strings__unbounded__text_ioB");
    u00220 : constant Version_32 := 16#2e5d93ef#;
    pragma Export (C, u00220, "ada__strings__unbounded__text_ioS");
-   u00221 : constant Version_32 := 16#86541a80#;
+   u00221 : constant Version_32 := 16#90953b12#;
    pragma Export (C, u00221, "pkg_ada_file_remove_linesB");
    u00222 : constant Version_32 := 16#1be1de00#;
    pragma Export (C, u00222, "pkg_ada_file_remove_linesS");
-   u00223 : constant Version_32 := 16#2323a8af#;
-   pragma Export (C, u00223, "system__memoryB");
-   u00224 : constant Version_32 := 16#1f488a30#;
-   pragma Export (C, u00224, "system__memoryS");
+   u00223 : constant Version_32 := 16#c6d31094#;
+   pragma Export (C, u00223, "pkg_ada_file_trim_linesB");
+   u00224 : constant Version_32 := 16#5339e795#;
+   pragma Export (C, u00224, "pkg_ada_file_trim_linesS");
+   u00225 : constant Version_32 := 16#2323a8af#;
+   pragma Export (C, u00225, "system__memoryB");
+   u00226 : constant Version_32 := 16#1f488a30#;
+   pragma Export (C, u00226, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -710,6 +714,8 @@ package ada_main is
    --  pkg_ada_file_read_write%b
    --  pkg_ada_file_remove_lines%s
    --  pkg_ada_file_remove_lines%b
+   --  pkg_ada_file_trim_lines%s
+   --  pkg_ada_file_trim_lines%b
    --  testdriver_main_ada_file_processing%b
    --  END ELABORATION ORDER
 

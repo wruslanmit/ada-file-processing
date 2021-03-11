@@ -1,0 +1,14 @@
+2021-03-11 12:58:42.99010133174 
+REPORT ON FILE TRIM LINES
+TRIM RIGHT (TRAILING WHITESPACES)
+===========================================================
+LINENO:  56 trimmed right end. line_lengthBefore:  85 line_lengthAfter:  75 DELTA =  10 right whitespaces removed.
+LINENO:  70 trimmed right end. line_lengthBefore:  83 line_lengthAfter:  71 DELTA =  12 right whitespaces removed.
+LINENO:  123 trimmed right end. line_lengthBefore:  49 line_lengthAfter:  33 DELTA =  16 right whitespaces removed.
+LINENO:  132 trimmed right end. line_lengthBefore:  111 line_lengthAfter:  97 DELTA =  14 right whitespaces removed.
+LINENO:  204 trimmed right end. line_lengthBefore:  111 line_lengthAfter:  100 DELTA =  11 right whitespaces removed.
+LINENO:  206 trimmed right end. line_lengthBefore:  114 line_lengthAfter:  100 DELTA =  14 right whitespaces removed.
+LINENO:  224 trimmed right end. line_lengthBefore:  119 line_lengthAfter:  106 DELTA =  13 right whitespaces removed.
+LINENO:  241 trimmed right end. line_lengthBefore:  115 line_lengthAfter:  98 DELTA =  17 right whitespaces removed.
+LINENO:  253 trimmed right end. line_lengthBefore:  121 line_lengthAfter:  105 DELTA =  16 right whitespaces removed.
+LINENO:  259 trimmed right end. line_lengthBefore:  45 line_lengthAfter:  31 DELTA =  14 right whitespaces removed.

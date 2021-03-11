@@ -1,5 +1,14 @@
 
+-- TRIM BOTH ENDS OF inp_UBSlineStr STRING INSITU
+ -- USING ARM SPECS RM-A-4.5: 
+ -- procedure Trim (Source : in out Unbounded_String; Side : in Trim_End);
+ -- REF: https://www2.seas.gwu.edu/~adagroup/adalib_html/ada-html/a-string.html#trim_end
+         
+         -- For in-situ trim
+         ASU.Trim (inp_UBSlineStr, AS.Both);     -- WORKS. Note: "AS.Both" Otherwise not visible
+         
 
+========================================
 with Ada.Strings.Fixed;
 use Ada.Strings.Fixed;
 

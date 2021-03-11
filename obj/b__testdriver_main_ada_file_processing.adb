@@ -46,6 +46,7 @@ package body ada_main is
    E209 : Short_Integer; pragma Import (Ada, E209, "pkg_ada_file_properties_E");
    E211 : Short_Integer; pragma Import (Ada, E211, "pkg_ada_file_read_write_E");
    E222 : Short_Integer; pragma Import (Ada, E222, "pkg_ada_file_remove_lines_E");
+   E224 : Short_Integer; pragma Import (Ada, E224, "pkg_ada_file_trim_lines_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -292,6 +293,8 @@ package body ada_main is
       E211 := E211 + 1;
       pkg_ada_file_remove_lines'elab_body;
       E222 := E222 + 1;
+      pkg_ada_file_trim_lines'elab_body;
+      E224 := E224 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -333,6 +336,7 @@ package body ada_main is
    --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_properties.o
    --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_read_write.o
    --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_remove_lines.o
+   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_trim_lines.o
    --   /home/wruslan/github-mit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
    --   -L/home/wruslan/github-mit/ada-file-processing/obj/
    --   -L/home/wruslan/github-mit/ada-file-processing/obj/

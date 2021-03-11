@@ -11,13 +11,15 @@ use  Ada.Text_IO;
 with Ada.Strings.Unbounded;  
 -- use Ada.Strings.Unbounded;  
 
--- IMPORT USER-DEFINED ADA PACKAGES
+-- IMPORT USER-DEFINED ADA PACKAGES 
+-- NOTE: ADA LOOKS FOR THE CORRESPONDING .ads FILE
 with pkg_ada_datetime_stamp;
 with pkg_ada_file_open_close;
 with pkg_ada_file_properties;
 with pkg_ada_file_line_properties;
 with pkg_ada_file_read_write;
 with pkg_ada_file_remove_lines;
+with pkg_ada_file_trim_lines;
 
 -- ========================================================
 procedure testdriver_main_ada_file_processing
@@ -35,6 +37,7 @@ is
    package PAFLP  renames pkg_ada_file_line_properties;
    package PAFRW  renames pkg_ada_file_read_write;
    package PAFRL  renames pkg_ada_file_remove_lines;
+   package PAFTL  renames pkg_ada_file_trim_lines;
    
    -- PACKAGE-WIDE VARIABLES
    -- ====================================================
@@ -46,20 +49,33 @@ is
    out_fmode        : ATIO.File_Mode  := ATIO.Out_File;
    app_fmode        : ATIO.File_Mode  := ATIO.Append_File;
    
+       
    -- MUST SELECT ONLY ONE FILE
    
-   inp_fname_01     : String := "files/bismillah.ngc"; 
-   out_fname_01     : String := "files/bismillah.ngc_after_blankline_removals.txt";
+   -- (1) FOR REMOVING BLANK LINES IN FILE   
+   inp_fname_01        : String := "files/bismillah.ngc"; 
+   out_fname_01        : String := "files/bismillah.ngc_after_blankline_removals.txt";
    
+   -- (2) FOR REMOVING LINES CONTAINING SPECIFIC SUBSTR_CONDITION
    inp_fname_02        : String := "files/bismillah.ngc_after_blankline_removals.txt";
-   substr_condition_02 : String := "Z["; -- Lines containing substring "Z["
-   out_fname_02        : String := "files/bismillah.ngc_after_substr(z[)_line_removals.txt";
-        
+   
+   -- DANGER: OnCondition can wipe all lines inside file meeting the set 
+   -- condition. It must be used properly 
+   -- substr_condition_02 : String := "(";  
+   -- out_fname_02        : String := "files/bismillah.ngc_after_substr(()_line_removals.txt";
+   
+   -- (3) FOR TRIMMING LINES IN FILE (TRIM LEADING, TRAILING AND BOTH ENDS OF LINES) 
+   inp_fname_03        : String := "files/bismillah.ngc_after_blankline_removals.txt";
+   out_fname_031       : String := "files/bismillah.ngc_after_trimmed_lines_left.txt";
+   out_fname_032       : String := "files/bismillah.ngc_after_trimmed_lines_right.txt";
+   out_fname_033       : String := "files/bismillah.ngc_after_trimmed_lines_both.txt";
+   
+   -- EXAMPLE FILES THAT CAN BE USED IN THE FOLDER
    -- inp_fname      : String := "files/ngc-files/bismillah.ngc";
    -- inp_fname      : String := "files/ngc-files/butterfly.nc";
    -- inp_fname      : String := "files/ngc-files/just-KSG.ngc";
    -- inp_fname      : String := "files/ngc-files/linuxcnc-logo.nc";
-   
+     
    -- TO ALLOW MULTIPLE HANDLES TO A SINGLE FILE
    inp_fform      : String := "shared=yes";   
    
@@ -67,7 +83,6 @@ is
    inp_fOwnID_00 : String := "ID: 00 MAIN";
    inp_fOwnID_01 : String := "ID: 01 PAFP";
    inp_fOwnID_02 : String := "ID: 02 PALFP";
-   
      
 -- ========================================================   
 begin  -- FOR procedure main_xxx
@@ -94,21 +109,19 @@ begin  -- FOR procedure main_xxx
    -- (3) EXECUTE PAFRL - pkg-ada-file-remove-lines
    -- =====================================================
    PAFRL.exec_remove_blank_lines (inp_fname_01, out_fname_01);
-   PAFRL.exec_remove_lines_oncondition (inp_fname_02, out_fname_02, substr_condition_02); 
    
-  
+   -- DANGER: OnCondition can wipe all lines in file if not used properly 
+   -- PAFRL.exec_remove_lines_oncondition (inp_fname_02, out_fname_02, substr_condition_02); 
+   
    -- =====================================================
    -- (4) EXECUTE PAFTL - pkg-ada-file-trim-lines
    -- =====================================================
-   
-   
-    -- =====================================================
-   -- (5) EXECUTE PAFLT - pkg-ada-file-line-tokenize
-   -- =====================================================
-   
-   
-   
-   
+   PAFTL.exec_file_trim_lines_right(inp_fname_03, out_fname_032);
+   PAFTL.exec_file_trim_lines_left (inp_fname_03, out_fname_031);
+   PAFTL.exec_file_trim_lines_both (inp_fname_03, out_fname_033);
+   -- IF RUN BOTH TRIM (LEADING AND TRAILING) WHITESPACES
+   -- NO NEED TO DO left AND right TRIMS. 
+      
    -- =====================================================
    -- EXECUTE CLOSE FILE PAFOC - pkg-ada-file-open-close
    -- ===================================================== 

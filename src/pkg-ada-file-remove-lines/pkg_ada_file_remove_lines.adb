@@ -102,6 +102,14 @@ is
       cnt_lineBlank_NO_WhiteSpace    := 0;
       cnt_lineNonBlank_NonWhiteSpace := 0;
       
+      -- WRITE HEADER TO REPORT FILE
+      ATIO.Set_Output (rep_fhandle);
+      PADTS.dtstamp; ATIO.New_Line; 
+      ATIO.Put_Line ("REPORT ON FILE BLANK LINE REMOVALS");
+      ATIO.Put_Line ("DELETING BOTH NULL AND BLANK LINES (all whitespaces)");
+      ATIO.Put_Line ("===========================================================");
+      ATIO.Set_Output (ATIO.Standard_Output);
+      
       -- =================================================
       -- RUN READ AND WRITE LOOP FOR BOTH INPUT/OUTPUT FILES
       -- ==================================================
@@ -121,8 +129,8 @@ is
           
             -- Write to report file
             ATIO.Put (rep_fhandle, "LINENO: " & Integer'Image(lineCount));
-            ATIO.Put (rep_fhandle, " REMOVED. Contained " & Integer'Image (cur_UBSlineLength) & " whitespaces.");
-            ATIO.Put_Line (rep_fhandle, " LINESTR = " &  ASU.To_String (inp_UBSlineStr));
+            ATIO.Put (rep_fhandle, " Removed. Contained " & Integer'Image (cur_UBSlineLength) & " whitespaces.");
+            ATIO.Put_Line (rep_fhandle, " lineStr: " &  ASU.To_String (inp_UBSlineStr));
          
          -- (2) BLANK LINE WITHOUT WHIRE SPACES (Null STRING)
          elsif (cur_UBSlineLength = 0) and (int_FirstIndexInString = 0) then
@@ -131,8 +139,8 @@ is
             
             -- Write to report file
             ATIO.Put (rep_fhandle, "LINENO: " & Integer'Image(lineCount));
-            ATIO.Put (rep_fhandle, " REMOVED. Contained " & Integer'Image (cur_UBSlineLength) & " whitespaces.");
-            ATIO.Put_Line (rep_fhandle, " LINESTR = " &  ASU.To_String (inp_UBSlineStr));
+            ATIO.Put (rep_fhandle, " Removed. Contained " & Integer'Image (cur_UBSlineLength) & " whitespaces.");
+            ATIO.Put_Line (rep_fhandle, " lineStr: " &  ASU.To_String (inp_UBSlineStr));
          
          -- (3) NON-BLANK USABLE LINES      
          else 
@@ -242,6 +250,14 @@ is
       substr_found := False;
       int_substrIndex := 0;
  
+      -- WRITE HEADER TO REPORT FILE
+      ATIO.Set_Output (rep_fhandle);
+      PADTS.dtstamp; ATIO.New_Line; 
+      ATIO.Put_Line ("REPORT ON FILE ON-CONDITION LINE REMOVALS");
+      ATIO.Put_Line ("DELETING LINES WITH SUBSTRING: " & substr_condition);
+      ATIO.Put_Line ("===========================================================");
+      ATIO.Set_Output (ATIO.Standard_Output);
+      
       -- =================================================
       -- RUN READ AND WRITE LOOP FOR BOTH INPUT/OUTPUT FILES
       -- ==================================================
@@ -276,8 +292,8 @@ is
          
          --   WRITE TO REPORT FILE LINEN0: XXX REMOVED 
               ATIO.Put (rep_fhandle, "LINENO: " & Integer'Image(lineCount));
-              ATIO.Put (rep_fhandle, " REMOVED. SUBSTRLOC: " & Natural'Image(int_substrIndex));
-              ATIO.Put_Line (rep_fhandle, " LINESTR = " &  ASU.To_String (inp_UBSlineStr));
+              ATIO.Put (rep_fhandle, " Removed. subStrLoc: " & Natural'Image(int_substrIndex));
+              ATIO.Put_Line (rep_fhandle, " lineStr: " &  ASU.To_String (inp_UBSlineStr));
          
          --   WRITE TO TERMINAL SCREEN LINEN0: XXX REMOVED 
               -- ATIO.Put ("LINENO: " & Integer'Image(lineCount));

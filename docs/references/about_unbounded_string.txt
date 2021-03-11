@@ -1,0 +1,16 @@
+https://www.radford.edu/~nokie/classes/320/std_lib_html/ada-strings-unbounded.html
+
+with Ada.Strings.Unbounded;
+package ASU renames Ada.Strings.Unbounded;
+
+=========================================
+https://www.radford.edu/~nokie/classes/320/std_lib_html/ada-strings-unbounded-text_io.html
+
+with Ada.Strings.Unbounded.Text_IO;
+package ASUTIO renames Ada.Strings.Unbounded.Text_IO;
+
+==========================================
+
+file:///home/wruslan/github-git/00-Ada-2012-HTML-Reference-Manual-start-with-RM00-TOC-html/RM-A-4-5.html
+
+

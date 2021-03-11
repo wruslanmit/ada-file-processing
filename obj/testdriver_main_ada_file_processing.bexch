@@ -10,6 +10,7 @@ b__testdriver_main_ada_file_processing.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_properties.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_read_write.o
 /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_remove_lines.o
+/home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_trim_lines.o
 /home/wruslan/github-mit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
 [GENERATED SOURCE FILES]
 b__testdriver_main_ada_file_processing.ads
