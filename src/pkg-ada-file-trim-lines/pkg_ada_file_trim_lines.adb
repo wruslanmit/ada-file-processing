@@ -1,6 +1,6 @@
 -- File   : pkg_ada_file_trim_lines.adb
 -- Date   : Thu 25 Feb 2021 01:51:47 PM +08
--- Author : WRY wruslandr@gmail.com
+-- Author : WRY wruslandr@gmail.com WWW
 -- ========================================================
 
 -- ADA STANDARD PACKAGES
@@ -83,6 +83,9 @@ is
       
       -- CHECK TIME STAMPED REPORT FILE NAME
       UBSTimeString := PADTS.get_time_stamp (ART.Clock); -- return AASU.Unbounded_String;
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 3, "-");  -- REPLACE : WITH -
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 6, "-");
+      
       rep_UBSfname := ASU.To_Unbounded_String(out_fname) & ("_report_") 
                     & ASU.To_String (UBSTimeString) & (".txt");  
       ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
@@ -163,6 +166,9 @@ is
       
       -- CHECK TIME STAMPED REPORT FILE NAME
       UBSTimeString := PADTS.get_time_stamp (ART.Clock); -- return AASU.Unbounded_String;
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 3, "-");  -- REPLACE : WITH -
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 6, "-");
+      
       rep_UBSfname := ASU.To_Unbounded_String(out_fname) & ("_report_") 
                     & ASU.To_String (UBSTimeString) & (".txt");  
       ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
@@ -239,6 +245,9 @@ is
       
       -- CHECK TIME STAMPED REPORT FILE NAME
       UBSTimeString := PADTS.get_time_stamp (ART.Clock); -- return AASU.Unbounded_String;
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 3, "-");  -- REPLACE : WITH -
+      UBSTimeString := ASU.Overwrite(UBSTimeString, 6, "-");
+      
       rep_UBSfname := ASU.To_Unbounded_String(out_fname) & ("_report_") 
                     & ASU.To_String (UBSTimeString) & (".txt");  
       ATIO.Put_Line ("   rep_fname: " & ASU.To_String (rep_UBSfname));
