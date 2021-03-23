@@ -330,16 +330,16 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_datetime_stamp.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_open_close.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_line_properties.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_properties.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_read_write.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_remove_lines.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/pkg_ada_file_trim_lines.o
-   --   /home/wruslan/github-mit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
-   --   -L/home/wruslan/github-mit/ada-file-processing/obj/
-   --   -L/home/wruslan/github-mit/ada-file-processing/obj/
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_datetime_stamp.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_open_close.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_line_properties.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_properties.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_read_write.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_remove_lines.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/pkg_ada_file_trim_lines.o
+   --   /home/wruslan/github/wruslanmit/ada-file-processing/obj/testdriver_main_ada_file_processing.o
+   --   -L/home/wruslan/github/wruslanmit/ada-file-processing/obj/
+   --   -L/home/wruslan/github/wruslanmit/ada-file-processing/obj/
    --   -L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
    --   -shared
    --   -lgnarl-9

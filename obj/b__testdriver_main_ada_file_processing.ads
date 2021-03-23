@@ -477,11 +477,11 @@ package ada_main is
    pragma Export (C, u00219, "ada__strings__unbounded__text_ioB");
    u00220 : constant Version_32 := 16#2e5d93ef#;
    pragma Export (C, u00220, "ada__strings__unbounded__text_ioS");
-   u00221 : constant Version_32 := 16#90953b12#;
+   u00221 : constant Version_32 := 16#09553e29#;
    pragma Export (C, u00221, "pkg_ada_file_remove_linesB");
    u00222 : constant Version_32 := 16#1be1de00#;
    pragma Export (C, u00222, "pkg_ada_file_remove_linesS");
-   u00223 : constant Version_32 := 16#c6d31094#;
+   u00223 : constant Version_32 := 16#26adf3ee#;
    pragma Export (C, u00223, "pkg_ada_file_trim_linesB");
    u00224 : constant Version_32 := 16#5339e795#;
    pragma Export (C, u00224, "pkg_ada_file_trim_linesS");
